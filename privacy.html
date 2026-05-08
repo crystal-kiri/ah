@@ -3,51 +3,73 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#fbf8f4" />
+  <meta name="theme-color" content="#ffffff" />
   <title>プライバシーポリシー｜合同会社アナハイム・エレクトロニクス</title>
   <meta name="description" content="合同会社アナハイム・エレクトロニクスのプライバシーポリシー" />
-  <meta name="robots" content="noindex,follow" />
+  <meta name="robots" content="index,follow" />
   <link rel="canonical" href="https://anaheimelectronics.jp/privacy.html" />
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
-  <link rel="icon" type="image/x-icon" href="/assets/favicon.ico" />
+  <link rel="icon" type="image/png" href="/assets/favicon.png" />
+  <link rel="apple-touch-icon" href="/assets/favicon.png" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" href="/assets/signale.woff" as="font" type="font/woff" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+
   <style>
+    @font-face{font-family:"Signale";src:url("/assets/signale.woff") format("woff");font-weight:400 900;font-style:normal;font-display:swap}
+    @font-face{font-family:"Kokumin";src:url("/assets/kokumin.ttf") format("truetype");font-weight:400 900;font-style:normal;font-display:swap}
     :root{
-      --ink:#2d2738;--ink-soft:#5a5267;--muted:#8a8896;
-      --bg:#fbf8f4;--bg-warm:#f5f1ec;
-      --line:rgba(45,39,56,.08);--hairline:rgba(45,39,56,.05);
-      --plum:#5d4d75;--plum-deep:#3f3850;
+      --bg:#ffffff;--bg-soft:#f6f4f0;
+      --ink:#10081a;--ink-soft:#3d2e44;--ink-mute:#7d6c80;
+      --violet:#9b3fd1;--violet-deep:#6c1eb0;
+      --magenta:#e91e63;--magenta-deep:#a8124a;
+      --line:rgba(16,8,26,.10);--hairline:rgba(16,8,26,.05);
+      --container:1180px;
+      --display:"Signale","Anton",sans-serif;
+      --serif:"Instrument Serif",Georgia,serif;
+      --sans-en:"Inter",system-ui,sans-serif;
+      --sans-jp:"Kokumin","Hiragino Maru Gothic ProN","Noto Sans JP",sans-serif;
     }
     *{box-sizing:border-box;margin:0;padding:0}
-    body{font-family:'Inter','Noto Sans JP',system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.95;font-feature-settings:"palt";-webkit-font-smoothing:antialiased}
-    a{color:var(--plum);text-decoration:none;border-bottom:1px solid currentColor}
-    a:hover{opacity:.7}
+    body{font-family:var(--sans-jp);background:var(--bg);color:var(--ink);line-height:1.95;font-feature-settings:"palt";-webkit-font-smoothing:antialiased;font-weight:400}
+    a{color:inherit;text-decoration:none}
+    em{font-style:normal}
+    .serif-i{font-family:var(--serif);font-style:italic;font-weight:400}
 
-    .header{background:rgba(251,248,244,.86);backdrop-filter:blur(20px);border-bottom:1px solid var(--hairline);padding:18px 32px;position:sticky;top:0;z-index:10}
-    .header-inner{max-width:880px;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
-    .brand{display:flex;align-items:center;font-weight:600;font-size:1rem;letter-spacing:-.02em;color:var(--ink);border-bottom:none}
-    .header a.back{font-size:.86rem;color:var(--ink-soft);font-weight:500;border-bottom:none}
+    .header{position:sticky;top:0;z-index:30;height:80px;background:rgba(255,255,255,.86);backdrop-filter:blur(16px) saturate(160%);-webkit-backdrop-filter:blur(16px) saturate(160%);border-bottom:1px solid var(--hairline)}
+    .header-inner{max-width:var(--container);margin:0 auto;height:100%;display:flex;align-items:center;justify-content:space-between;padding:0 32px}
+    .brand{font-family:var(--sans-en);font-weight:700;font-size:.96rem;color:var(--ink);letter-spacing:-.01em}
+    .header .back{font-family:var(--sans-jp);font-size:.86rem;color:var(--ink-soft);font-weight:500;transition:color .2s}
+    .header .back:hover{color:var(--violet-deep)}
 
-    .page{max-width:880px;margin:0 auto;padding:64px 32px 96px}
-    .page-eyebrow{font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;color:var(--plum);font-weight:700;margin-bottom:14px}
-    .page h1{font-size:clamp(1.8rem,3vw,2.4rem);font-weight:700;letter-spacing:-.03em;line-height:1.25;color:var(--plum-deep);margin-bottom:14px}
-    .page .lead{color:var(--ink-soft);font-size:.96rem;margin-bottom:48px}
-    .page h2{font-size:1.16rem;font-weight:700;color:var(--plum-deep);margin:36px 0 14px;letter-spacing:-.02em}
-    .page h2 .num{display:inline-block;color:var(--plum);font-weight:700;margin-right:10px}
-    .page p{color:var(--ink-soft);font-size:.96rem;margin-bottom:14px}
-    .page ul{padding-left:24px;margin-bottom:14px}
-    .page ul li{color:var(--ink-soft);font-size:.96rem;margin-bottom:6px}
-    .updated{color:var(--muted);font-size:.86rem;margin-top:48px;padding-top:24px;border-top:1px solid var(--hairline)}
+    .page{max-width:840px;margin:0 auto;padding:80px 32px 100px}
+    .legal-eyebrow{display:inline-block;font-family:var(--sans-en);font-size:.74rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--violet-deep);margin-bottom:18px}
+    .page h1{font-family:var(--sans-jp);font-weight:700;font-size:clamp(2rem,4.4vw,3.2rem);line-height:1.3;letter-spacing:-.03em;color:var(--ink);margin-bottom:18px}
+    .page h1 em.serif-i{color:var(--violet-deep);font-size:1.04em}
+    .page .lead{font-size:1rem;color:var(--ink-soft);line-height:2;margin-bottom:64px;max-width:680px}
 
-    .footer{background:var(--bg-warm);border-top:1px solid var(--hairline);padding:30px 32px}
-    .footer-inner{max-width:880px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:20px;font-size:.82rem;color:var(--muted);flex-wrap:wrap}
-    .footer a{color:var(--ink-soft);border-bottom:none}
-    .footer a:hover{color:var(--ink)}
-    .footer .links{display:flex;gap:24px;flex-wrap:wrap}
+    .page h2{font-family:var(--sans-jp);font-weight:700;font-size:1.18rem;color:var(--ink);margin:48px 0 14px;letter-spacing:-.01em;line-height:1.5}
+    .page h2 .num{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--violet-deep);margin-right:14px;font-size:1.1em}
+    .page p{color:var(--ink-soft);font-size:.96rem;line-height:1.95;margin-bottom:14px}
+    .page p a{color:var(--magenta-deep);border-bottom:1px solid currentColor;padding-bottom:1px}
+    .page p a:hover{color:var(--violet-deep);border-bottom-color:var(--violet-deep)}
+    .page ul{padding-left:0;list-style:none;margin-bottom:14px}
+    .page ul li{color:var(--ink-soft);font-size:.96rem;line-height:1.95;margin-bottom:8px;padding-left:22px;position:relative}
+    .page ul li::before{content:"";position:absolute;left:0;top:.85em;width:8px;height:1px;background:var(--violet-deep)}
+
+    .updated{color:var(--ink-mute);font-size:.86rem;margin-top:64px;padding-top:24px;border-top:1px solid var(--hairline)}
+
+    .footer{background:var(--bg);border-top:1px solid var(--hairline);padding:32px}
+    .footer-inner{max-width:var(--container);margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+    .footer .left{font-family:var(--sans-en);font-size:.78rem;color:var(--ink-mute)}
+    .footer .links{display:flex;gap:22px;flex-wrap:wrap;font-family:var(--sans-jp);font-size:.8rem}
+    .footer a{color:var(--ink-soft);transition:color .2s}
+    .footer a:hover{color:var(--violet-deep)}
 
     @media (max-width:680px){
+      .header-inner{padding:0 22px}
+      .page{padding:60px 22px 80px}
       .footer-inner{flex-direction:column;align-items:flex-start;gap:14px}
     }
   </style>
@@ -56,32 +78,30 @@
 
 <header class="header">
   <div class="header-inner">
-    <a href="/" class="brand">
-      <span>Anaheim Electronics</span>
-    </a>
+    <a href="/" class="brand">Anaheim Electronics</a>
     <a href="/" class="back">← ホームへ戻る</a>
   </div>
 </header>
 
 <main class="page">
-  <div class="page-eyebrow">privacy</div>
-  <h1>プライバシーポリシー</h1>
+  <span class="legal-eyebrow">Privacy</span>
+  <h1><em class="serif-i">プライバシー</em>ポリシー</h1>
   <p class="lead">合同会社アナハイム・エレクトロニクス（以下、「当社」）は、当社が運営するウェブサイトおよびサービスにおける個人情報の取り扱いについて、以下のとおりプライバシーポリシーを定めます。</p>
 
   <h2><span class="num">1.</span>取得する情報</h2>
-  <p>本サービスでは、以下の情報を取得することがあります。</p>
+  <p>当社のウェブサイト・サービスにおいて、以下の情報を取得することがあります。</p>
   <ul>
-    <li>お問い合わせ・お申込み時にご入力いただく氏名、店舗名、メールアドレス等</li>
-    <li>クレジットカードによるお支払い時に決済代行サービス（Stripe）が取得する情報（カード番号は当社のサーバーには保存されません）</li>
-    <li>本サービスを通じて記録される打刻ログ（お客様のGoogleスプレッドシートに保存）</li>
-    <li>サービス改善のためのアクセスログ（IPアドレス、ブラウザ情報、参照元、閲覧ページ等）</li>
+    <li>お問い合わせ・お申込み時にご入力いただく氏名、会社名・店舗名、メールアドレス等</li>
+    <li>クレジットカード決済を伴うサービスにおいて、決済代行サービス（Stripe）が取得する情報（カード番号は当社のサーバーには保存されません）</li>
+    <li>各サービスを通じて記録される業務データ（pippon time の打刻ログはお客様の Google スプレッドシートに保存されます）</li>
+    <li>サイト改善のためのアクセスログ（IP アドレス、ブラウザ情報、参照元、閲覧ページ等）</li>
   </ul>
 
   <h2><span class="num">2.</span>利用目的</h2>
   <p>取得した情報は、以下の目的で利用します。</p>
   <ul>
-    <li>本サービスの提供および運用</li>
-    <li>お問い合わせへの対応</li>
+    <li>当社サービスの提供および運用</li>
+    <li>お問い合わせ・お見積もりへの対応</li>
     <li>料金請求および決済処理</li>
     <li>サービスのご案内、機能のご紹介</li>
     <li>サービスの改善、新機能の開発、不具合の調査</li>
@@ -93,14 +113,15 @@
   <ul>
     <li>法令に基づく場合</li>
     <li>人の生命、身体または財産の保護のために必要がある場合</li>
-    <li>サービス運営に必要な範囲で、業務委託先（決済代行サービス Stripe、ホスティング GitHub Pages 等）に委託する場合</li>
+    <li>サービス運営に必要な範囲で、業務委託先（決済代行 Stripe、ホスティング GitHub Pages 等）に委託する場合</li>
   </ul>
 
-  <h2><span class="num">4.</span>打刻データの保存場所</h2>
-  <p>本サービスを通じて記録される打刻データは、お客様自身のGoogleスプレッドシートに保存されます。当社のサーバーに打刻データを保存することはありません。データの所有権はお客様にあります。</p>
+  <h2><span class="num">4.</span>業務データの保存場所</h2>
+  <p>pippon time を通じて記録される打刻データは、お客様自身の Google スプレッドシートに直接保存されます。当社のサーバーには打刻データを保存しません。データの所有権はお客様にあります。</p>
+  <p>その他のサービス（AI 採用管理システム、営業ロープレ AI 等）における業務データの取り扱いは、個別契約書に従います。</p>
 
-  <h2><span class="num">5.</span>Cookieの利用について</h2>
-  <p>本サービスでは、サービス改善のため Cookie を利用することがあります。ブラウザの設定により Cookie の受け取りを拒否することが可能ですが、その場合本サービスの一部機能が利用できなくなる可能性があります。</p>
+  <h2><span class="num">5.</span>Cookie の利用について</h2>
+  <p>当社サイトでは、サイト改善のため Cookie を利用することがあります。ブラウザの設定により Cookie の受け取りを拒否することが可能ですが、その場合一部機能が利用できなくなる可能性があります。</p>
 
   <h2><span class="num">6.</span>個人情報の開示・訂正・削除</h2>
   <p>お客様ご自身の個人情報について、開示・訂正・削除をご希望の場合は、下記のお問い合わせ先までご連絡ください。本人確認のうえ、合理的な期間内に対応します。</p>
@@ -113,17 +134,14 @@
 
   <h2><span class="num">9.</span>お問い合わせ窓口</h2>
   <p>本ポリシーに関するお問い合わせ、個人情報の取り扱いに関するご質問は、下記までお願いします。</p>
-  <p>
-    Anaheim Electronics<br>
-    メールアドレス：<a href="mailto:info@anaheimelectronics.jp">info@anaheimelectronics.jp</a>
-  </p>
+  <p>合同会社アナハイム・エレクトロニクス<br>メールアドレス：<a href="mailto:info@anaheimelectronics.jp">info@anaheimelectronics.jp</a></p>
 
-  <p class="updated">制定日：2026年5月7日</p>
+  <p class="updated">制定日：2026 年 5 月 7 日</p>
 </main>
 
 <footer class="footer">
   <div class="footer-inner">
-    <div>© 2026 Anaheim Electronics</div>
+    <div class="left">© 2026 Anaheim Electronics LLC</div>
     <div class="links">
       <a href="/about-site/">サイト概要</a>
       <a href="/tokushoho.html">特定商取引法に基づく表記</a>
