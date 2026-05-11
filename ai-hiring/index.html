@@ -133,98 +133,105 @@
       .footer-inner{flex-direction:column;align-items:flex-start;gap:14px}
     }
 
-    /* --- 追加セクション（visual-evidence）の調整 --- */
-.visual-evidence { 
-  background: var(--bg-soft); 
-  padding: 100px 32px; 
-  border-bottom: 1px solid var(--line); 
-}
-.evidence-inner { 
-  max-width: var(--container); 
-  margin: 0 auto; 
-}
+    /* --- 新しく追加した証拠セクションのスタイル --- */
+    .visual-evidence { 
+      background: var(--bg-soft); 
+      padding: 100px 32px; 
+      border-bottom: 1px solid var(--line); 
+    }
+    .evidence-inner { 
+      max-width: var(--container); 
+      margin: 0 auto; 
+    }
 
-/* メインの動画解析部分 */
-.evidence-main { 
-  display: grid; 
-  grid-template-columns: 1.2fr 1fr; 
-  gap: 60px; 
-  align-items: center; 
-  margin-bottom: 80px; 
-}
-.video-container { 
-  position: relative; 
-  border-radius: 20px; 
-  overflow: hidden; 
-  box-shadow: 0 20px 40px rgba(16,8,26,0.08); 
-  border: 1px solid var(--line); 
-  background: #fff;
-}
-.video-overlay { 
-  position: absolute; 
-  top: 20px; 
-  left: 20px; 
-  background: var(--accent); 
-  color: #fff; 
-  padding: 4px 12px; 
-  border-radius: 4px; 
-  font-size: .7rem; 
-  font-family: var(--sans-en); 
-  font-weight: 700; 
-  letter-spacing: .1em; 
-}
-.evidence-desc h3 { 
-  font-size: 2.2rem; 
-  line-height: 1.4; 
-  margin-bottom: 24px; 
-  letter-spacing: -.02em; 
-  color: var(--ink);
-}
+    /* メインの動画解析部分を横並びに */
+    .evidence-main { 
+      display: flex; /* gridからflexに変更してより確実に横並びにします */
+      gap: 60px; 
+      align-items: center; 
+      margin-bottom: 80px; 
+    }
+    .video-container { 
+      flex: 1.2;
+      position: relative; 
+      border-radius: 20px; 
+      overflow: hidden; 
+      box-shadow: 0 20px 40px rgba(16,8,26,0.08); 
+      border: 1px solid var(--line); 
+      background: #fff;
+    }
+    .video-container img {
+      width: 100%;
+      display: block;
+    }
+    .evidence-desc {
+      flex: 1;
+    }
+    .video-overlay { 
+      position: absolute; 
+      top: 20px; 
+      left: 20px; 
+      background: var(--accent); 
+      color: #fff; 
+      padding: 4px 12px; 
+      border-radius: 4px; 
+      font-size: .7rem; 
+      font-family: var(--sans-en); 
+      font-weight: 700; 
+      letter-spacing: .1em; 
+    }
+    .evidence-desc h3 { 
+      font-size: 2.2rem; 
+      line-height: 1.4; 
+      margin-bottom: 24px; 
+      letter-spacing: -.02em; 
+      color: var(--ink);
+    }
 
-/* 下の2枚並びの部分 */
-.evidence-grid { 
-  display: grid; 
-  grid-template-columns: repeat(2, 1fr); 
-  gap: 40px; 
-}
-.evidence-card { 
-  background: var(--bg); 
-  padding: 32px; 
-  border-radius: 20px; 
-  border: 1px solid var(--line); 
-}
-.evidence-card img { 
-  width: 100%; 
-  border-radius: 12px; 
-  border: 1px solid var(--hairline); 
-  margin-bottom: 24px; 
-  display: block;
-}
-.evidence-card h4 { 
-  font-size: 1.2rem; 
-  margin-bottom: 12px; 
-  font-weight: 700;
-}
-.evidence-card p { 
-  font-size: .94rem; 
-  color: var(--ink-soft); 
-  line-height: 1.8; 
-}
+    /* 下の2枚並びを横並びに */
+    .evidence-grid { 
+      display: grid; 
+      grid-template-columns: repeat(2, 1fr); 
+      gap: 40px; 
+    }
+    .evidence-card { 
+      background: var(--bg); 
+      padding: 32px; 
+      border-radius: 20px; 
+      border: 1px solid var(--line); 
+    }
+    .evidence-card img { 
+      width: 100%; 
+      border-radius: 12px; 
+      border: 1px solid var(--hairline); 
+      margin-bottom: 24px; 
+      display: block;
+    }
+    .evidence-card h4 { 
+      font-size: 1.2rem; 
+      margin-bottom: 12px; 
+      font-weight: 700;
+    }
+    .evidence-card p { 
+      font-size: .94rem; 
+      color: var(--ink-soft); 
+      line-height: 1.8; 
+    }
 
-/* スマホ用の調整 */
-@media (max-width: 780px) {
-  .evidence-main { 
-    grid-template-columns: 1fr; 
-    gap: 32px; 
-    text-align: center; 
-  }
-  .evidence-grid { 
-    grid-template-columns: 1fr; 
-  }
-  .evidence-desc h3 { 
-    font-size: 1.6rem; 
-  }
-}
+    /* スマホで縦並びにする設定 */
+    @media (max-width: 780px) {
+      .evidence-main { 
+        flex-direction: column;
+        gap: 32px; 
+        text-align: center; 
+      }
+      .evidence-grid { 
+        grid-template-columns: 1fr; 
+      }
+      .evidence-desc h3 { 
+        font-size: 1.6rem; 
+      }
+    }
   </style>
 </head>
 <body>
