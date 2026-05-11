@@ -121,86 +121,43 @@
     .footer a{color:var(--ink-soft);transition:color .2s}
     .footer a:hover{color:var(--accent-deep)}
 
-    @media (max-width:780px){
-      .nav{display:none}
-      .page-hero{min-height:60vh;justify-content:center;padding:100px 24px 60px}
-      .hero-inner{text-align:center;max-width:none}
-      .page-body{padding:60px 24px 60px}
-      .features{grid-template-columns:1fr}
-      .cta-block{padding:36px 24px}
-      .other{padding:60px 24px}
-      .other-list{grid-template-columns:1fr}
-      .footer-inner{flex-direction:column;align-items:flex-start;gap:14px}
-    }
-
-    /* --- 証拠セクション修正版 --- */
+    /* --- 証拠セクション：16:9 横長修正版 --- */
     .visual-evidence {
       background: var(--bg-soft);
       padding: 100px 32px;
       border-bottom: 1px solid var(--line);
-      width: 100%;
     }
     .evidence-inner {
       max-width: var(--container);
       margin: 0 auto;
     }
-    /* 1. 横並びのバランスを固定 */
     .evidence-main { 
       display: flex;
       gap: 60px;
-      align-items: center; /* 上下中央揃え */
-      margin-bottom: 100px;
-      width: 100%;
+      align-items: center;
+      margin-bottom: 80px;
     }
 
-    /* 2. 動画の外枠：ここで「横幅」を厳しく制限します */
+    /* 動画コンテナ：横幅を広げ、16:9に固定 */
     .video-container { 
-      flex: 0 0 320px; /* 横幅を320pxから動かさない */
+      flex: 0 0 540px; /* PCでの動画の横幅 */
       position: relative; 
-      border-radius: 20px; 
+      border-radius: 16px; 
       overflow: hidden; 
       box-shadow: 0 20px 40px rgba(16,8,26,0.1); 
       border: 1px solid var(--line); 
       background: #000;
-      /* 縦横比をスマホらしい 9:16 に強制 */
-      aspect-ratio: 9 / 16; 
+      /* 縦横比を16:9に強制 */
+      aspect-ratio: 16 / 9; 
     }
 
-    /* 3. 動画本体：枠の中で「はみ出し」をカットしてフィットさせる */
     .video-container video {
       width: 100%;
       height: 100%;
       display: block;
-      object-fit: cover; /* これで枠いっぱいに綺麗に収まります */
+      object-fit: cover;
     }
 
-    /* 4. 右側のテキスト：動画がスリムになった分、読みやすく配置 */
-    .evidence-desc {
-      flex: 1;
-    }
-    .evidence-desc h3 { 
-      font-size: 2.2rem; 
-      line-height: 1.3; 
-      margin-bottom: 20px; 
-      color: var(--ink);
-    }
-    .evidence-desc p {
-      font-size: 1.05rem;
-      color: var(--ink-soft);
-      max-width: 480px; /* テキストが横に伸びすぎないように */
-    }
-
-    /* スマホで見るときは縦に並べる */
-    @media (max-width: 780px) {
-      .evidence-main { flex-direction: column; text-align: center; gap: 32px; }
-      .video-container { flex: 0 0 auto; width: 280px; margin: 0 auto; }
-      .evidence-desc p { margin: 0 auto; }
-    }
-
-    /* テキスト側の調整 */
-    .evidence-desc {
-      flex: 1;
-    }
     .video-overlay {
       position: absolute;
       top: 20px;
@@ -213,18 +170,23 @@
       font-weight: 700;
       z-index: 5;
     }
-    .evidence-desc h3 {
-      font-size: 2.2rem;
-      line-height: 1.4;
-      margin-bottom: 24px;
+
+    .evidence-desc {
+      flex: 1;
+    }
+    .evidence-desc h3 { 
+      font-size: 2.2rem; 
+      line-height: 1.3; 
+      margin-bottom: 24px; 
       color: var(--ink);
     }
+
     .evidence-grid {
-      display: flex;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
       gap: 40px;
     }
     .evidence-card {
-      flex: 1;
       background: var(--bg);
       padding: 32px;
       border-radius: 20px;
@@ -235,10 +197,11 @@
       border-radius: 12px;
       margin-bottom: 24px;
     }
-    @media (max-width: 780px) {
-      .evidence-main { flex-direction: column; text-align: center; }
-      .evidence-grid { flex-direction: column; }
-      .evidence-desc h3 { font-size: 1.6rem; }
+
+    @media (max-width: 900px) {
+      .evidence-main { flex-direction: column; text-align: center; gap: 32px; }
+      .video-container { flex: 0 0 auto; width: 100%; max-width: 500px; }
+      .evidence-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -264,18 +227,17 @@
   </div>
 </section>
 
-  <section class="visual-evidence">
+<section class="visual-evidence">
   <div class="evidence-inner">
-    
     <div class="evidence-main">
       <div class="video-container">
-  <video src="/assets/download.mp4" autoplay loop muted playsinline poster="/assets/interview-video-placeholder.jpg">
-    お使いのブラウザは動画タグをサポートしていません。
-  </video>
-  <div class="video-overlay">
-    <span class="status-tag">Analyzing...</span>
-  </div>
-</div>
+        <video src="/assets/download.mp4" autoplay loop muted playsinline poster="/assets/interview-video-placeholder.jpg">
+          お使いのブラウザは動画タグをサポートしていません。
+        </video>
+        <div class="video-overlay">
+          <span class="status-tag">Analyzing...</span>
+        </div>
+      </div>
       <div class="evidence-desc">
         <h3>「人となり」をデータ化する、面接動画解析。</h3>
         <p>表情、声のトーン、発言内容をAIがリアルタイムに分析。面接官の「なんとなく」を排除し、自社との適合性を客観的な数値で示します。</p>
@@ -288,14 +250,12 @@
         <h4>選考の「詰まり」をゼロに。</h4>
         <p>数百人の応募者がどのフェーズにいるか一目で把握。AIが次にアクションすべき候補者を提案し、選考の停滞を未然に防ぎます。</p>
       </div>
-
       <div class="evidence-card">
         <img src="/assets/応募者評価.png" alt="応募者評価レポート">
         <h4>迷わないための、評価レポート。</h4>
         <p>バラバラな面接官のコメントをAIが要約。評価の軸を揃え、採用会議の時間を「確認」ではなく「意思決定」に変えます。</p>
       </div>
     </div>
-
   </div>
 </section>
 
