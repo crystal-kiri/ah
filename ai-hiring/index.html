@@ -138,21 +138,21 @@
       margin-bottom: 80px;
     }
 
-    /* 動画コンテナ：横幅を広げ、16:9に固定 */
     /* 動画コンテナ：枠線を消し、影だけを適応 */
     .video-container { 
       flex: 0 0 540px !important; 
       width: 540px !important;
       height: 304px !important; 
       position: relative !important; 
-      border-radius: 16px; 
+      border-radius: 12px; 
       overflow: hidden !important; 
       background: #000;
 
-      /* 1. 枠線を「0」にして強制排除 */
-      border: 0 !important;
+      /* 枠線と影をすべて抹殺 */
+      border: none !important;
       outline: none !important;
-
+      box-shadow: none !important;
+    }
 
     /* 動画本体 */
     .video-container video {
@@ -160,7 +160,6 @@
       height: 100% !important;
       display: block !important;
       object-fit: cover !important;
-      /* video自体に枠線がついている可能性も考慮して0に */
       border: 0 !important; 
     }
 
