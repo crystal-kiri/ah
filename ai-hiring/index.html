@@ -139,23 +139,32 @@
     }
 
     /* 動画コンテナ：横幅を広げ、16:9に固定 */
+    /* 動画コンテナ：枠線を消し、影だけを適応 */
     .video-container { 
-      flex: 0 0 540px !important; /* 横幅を540pxに固定 */
+      flex: 0 0 540px !important; 
       width: 540px !important;
-      height: 304px !important; /* 高さを304px（540の約16:9）に強制固定 */
+      height: 304px !important; 
       position: relative !important; 
       border-radius: 16px; 
       overflow: hidden !important; 
-      box-shadow: 0 20px 40px rgba(16,8,26,0.1); 
-     
       background: #000;
+
+      /* 1. 枠線を「0」にして強制排除 */
+      border: 0 !important;
+      outline: none !important;
+
+      /* 2. 影を少し上品に再設定（ふわっと浮かせます） */
+      box-shadow: 0 20px 50px rgba(16, 8, 26, 0.12) !important;
     }
 
+    /* 動画本体 */
     .video-container video {
-      width: 100%;
-      height: 100%;
-      display: block;
-      object-fit: cover;
+      width: 100% !important;
+      height: 100% !important;
+      display: block !important;
+      object-fit: cover !important;
+      /* video自体に枠線がついている可能性も考慮して0に */
+      border: 0 !important; 
     }
 
     .video-overlay {
