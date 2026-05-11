@@ -170,17 +170,29 @@
     }
     .nav a{transition:color .2s}
     .nav a:hover{color:#fff}
-    .header-cta{
-      font-family:var(--sans-en);font-size:.82rem;font-weight:600;
-      letter-spacing:.01em;
-      padding:9px 16px;border-radius:999px;
-      color:#fff;background:transparent;
-      border:1px solid rgba(255,255,255,.3);
-      backdrop-filter:blur(4px);
-      transition:background .2s,color .2s;
-    }
-    .header-cta:hover{background:#fff;color:#000}
+    .header-cta {
+  font-family: var(--sans-en);
+  font-size: .82rem;
+  font-weight: 700; /* 少し太くして存在感を出す */
+  letter-spacing: .08em; /* 字間を広げて「英語らしさ」を強調 */
+  padding: 9px 24px; /* 横幅を少し広げて優雅に */
+  border-radius: 2px; /* 丸み（999px）を捨てて、あえて角立たせるのがWIRED流 */
+  
+  /* 色の設定：背景が白なら「黒枠に白文字」か「白枠に黒文字」に */
+  color: var(--ink); 
+  background: transparent;
+  border: 1.5px solid var(--ink); /* 透明度をなくしてクッキリさせる */
+  
+  backdrop-filter: blur(4px);
+  transition: all .2s ease;
+  text-transform: uppercase; /* 小文字混じりなら強制的に大文字へ */
+}
 
+.header-cta:hover {
+  background: var(--ink);
+  color: #fff;
+  border-color: var(--ink);
+}
     /* Hero — particle */
     .hero-wrapper{
       position:relative;width:100vw;height:85vh;
@@ -516,12 +528,13 @@
 <header class="header">
   <div class="header-inner">
     <a href="/" class="brand">Anaheim Electronics</a>
+    
     <nav class="nav">
-      <a href="#services">サービス</a>
-      <a href="#what">事業</a>
-      <a href="/contact/">お問い合わせ</a>
+      <a href="#services">FEATURES</a>
+      <a href="/journal/">JOURNAL</a> <a href="/contact/">CONTACT</a>
     </nav>
-    <a href="/pippon-time/" class="header-cta">pippon time →</a>
+    
+    <a href="/pippon-time/" class="header-cta">PIPPON TIME →</a>
   </div>
 </header>
 
