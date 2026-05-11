@@ -144,31 +144,57 @@
       max-width: var(--container);
       margin: 0 auto;
     }
+    /* 1. 横並びのバランスを固定 */
     .evidence-main { 
       display: flex;
-      gap: 5vw; /* 画面幅に応じた適切な余白 */
-      align-items: center;
-      margin-bottom: 80px;
+      gap: 60px;
+      align-items: center; /* 上下中央揃え */
+      margin-bottom: 100px;
       width: 100%;
     }
+
+    /* 2. 動画の外枠：ここで「横幅」を厳しく制限します */
     .video-container { 
-      flex: 0 0 45%; /* 幅を全体の45%に固定して巨大化を防ぐ */
-      max-width: 480px; /* どんなに大きくても480pxまでに制限 */
+      flex: 0 0 320px; /* 横幅を320pxから動かさない */
       position: relative; 
       border-radius: 20px; 
       overflow: hidden; 
-      box-shadow: 0 20px 40px rgba(16,8,26,0.08); 
+      box-shadow: 0 20px 40px rgba(16,8,26,0.1); 
       border: 1px solid var(--line); 
       background: #000;
+      /* 縦横比をスマホらしい 9:16 に強制 */
+      aspect-ratio: 9 / 16; 
     }
 
-    /* 動画自体の表示設定 */
+    /* 3. 動画本体：枠の中で「はみ出し」をカットしてフィットさせる */
     .video-container video {
-      width: 100% !important;
-      height: auto !important;
+      width: 100%;
+      height: 100%;
       display: block;
-      aspect-ratio: 9 / 16; /* スマホ型動画なら縦長に固定 */
-      object-fit: cover;
+      object-fit: cover; /* これで枠いっぱいに綺麗に収まります */
+    }
+
+    /* 4. 右側のテキスト：動画がスリムになった分、読みやすく配置 */
+    .evidence-desc {
+      flex: 1;
+    }
+    .evidence-desc h3 { 
+      font-size: 2.2rem; 
+      line-height: 1.3; 
+      margin-bottom: 20px; 
+      color: var(--ink);
+    }
+    .evidence-desc p {
+      font-size: 1.05rem;
+      color: var(--ink-soft);
+      max-width: 480px; /* テキストが横に伸びすぎないように */
+    }
+
+    /* スマホで見るときは縦に並べる */
+    @media (max-width: 780px) {
+      .evidence-main { flex-direction: column; text-align: center; gap: 32px; }
+      .video-container { flex: 0 0 auto; width: 280px; margin: 0 auto; }
+      .evidence-desc p { margin: 0 auto; }
     }
 
     /* テキスト側の調整 */
