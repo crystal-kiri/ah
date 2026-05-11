@@ -144,27 +144,34 @@
       max-width: var(--container);
       margin: 0 auto;
     }
-    .evidence-main {
+    .evidence-main { 
       display: flex;
-      gap: 60px;
+      gap: 5vw; /* 画面幅に応じた適切な余白 */
       align-items: center;
       margin-bottom: 80px;
+      width: 100%;
     }
-    .video-container {
-      flex: 1.2;
-      position: relative;
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: 0 20px 40px rgba(16,8,26,0.08);
-      border: 1px solid var(--line);
-      background: #000; /* 動画がない時も黒く見えるように */
+    .video-container { 
+      flex: 0 0 45%; /* 幅を全体の45%に固定して巨大化を防ぐ */
+      max-width: 480px; /* どんなに大きくても480pxまでに制限 */
+      position: relative; 
+      border-radius: 20px; 
+      overflow: hidden; 
+      box-shadow: 0 20px 40px rgba(16,8,26,0.08); 
+      border: 1px solid var(--line); 
+      background: #000;
     }
-    /* 動画自体のサイズを強制指定 */
+
+    /* 動画自体の表示設定 */
     .video-container video {
       width: 100% !important;
       height: auto !important;
       display: block;
+      aspect-ratio: 9 / 16; /* スマホ型動画なら縦長に固定 */
+      object-fit: cover;
     }
+
+    /* テキスト側の調整 */
     .evidence-desc {
       flex: 1;
     }
