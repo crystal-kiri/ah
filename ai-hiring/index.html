@@ -140,15 +140,15 @@
 
     /* 動画コンテナ：横幅を広げ、16:9に固定 */
     .video-container { 
-      flex: 0 0 540px; /* PCでの動画の横幅 */
-      position: relative; 
+      flex: 0 0 540px !important; /* 横幅を540pxに固定 */
+      width: 540px !important;
+      height: 304px !important; /* 高さを304px（540の約16:9）に強制固定 */
+      position: relative !important; 
       border-radius: 16px; 
-      overflow: hidden; 
+      overflow: hidden !important; 
       box-shadow: 0 20px 40px rgba(16,8,26,0.1); 
       border: 1px solid var(--line); 
       background: #000;
-      /* 縦横比を16:9に強制 */
-      aspect-ratio: 16 / 9; 
     }
 
     .video-container video {
