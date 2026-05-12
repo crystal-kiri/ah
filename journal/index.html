@@ -149,13 +149,25 @@
   <section class="journal-hero">
     <h1>INSIGHTS,<br>NOT NOISE.</h1>
   </section>
-  <section class="journal-grid">
-    <a href="./posts/2026-05-12.html" class="journal-item">
-      <span class="post-meta">MAY 12, 2026</span>
-      <h2>現場に「静寂」を届ける。DXが忘れてしまったもの。</h2>
-    </a>
-  </section>
+
+  <section class="journal-grid"></section>
 </main>
+
+<script>
+  fetch('./list.json')
+    .then(response => response.json())
+    .then(data => {
+      const container = document.querySelector('.journal-grid');
+      // dataを逆順（新しい順）にしてから表示
+      container.innerHTML = data.reverse().map(post => `
+        <a href="${post.url}" class="journal-item">
+          <span class="post-meta">${post.date}</span>
+          <h2>${post.title}</h2>
+        </a>
+      `).join('');
+    })
+    .catch(error => console.error('Error loading journal list:', error));
+</script>
 
 </body>
 </html>
