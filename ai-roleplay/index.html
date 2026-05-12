@@ -46,15 +46,68 @@
     em{font-style:normal}
     .serif-i{font-family:var(--serif);font-style:italic;font-weight:400}
 
-    .header{position:absolute;top:0;left:0;right:0;z-index:30;height:80px}
-    .header-inner{max-width:var(--container);margin:0 auto;height:100%;display:flex;align-items:center;gap:28px;padding:0 32px}
-    .brand{font-family:var(--sans-en);font-weight:700;font-size:.96rem;color:#fff;letter-spacing:-.01em}
-    .nav{display:flex;gap:26px;margin-left:auto;font-size:.86rem;color:rgba(255,255,255,.85);font-weight:500}
-    .nav a{transition:color .2s}
-    .nav a:hover{color:#fff}
-    .header-cta{font-family:var(--sans-en);font-size:.82rem;font-weight:600;padding:9px 16px;border-radius:999px;color:#fff;border:1px solid rgba(255,255,255,.3);backdrop-filter:blur(4px);transition:background .2s,color .2s}
-    .header-cta:hover{background:#fff;color:var(--ink)}
+    /* --- 全リンクの初期化（青色と下線を絶対に出さない） --- */
+    a, a:link, a:visited, a:hover, a:active {
+      text-decoration: none !important;
+      color: inherit;
+    }
 
+    /* Header — 透明な背景に白文字を浮かせる */
+    .header {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      height: 80px;
+    }
+    .header-inner {
+      max-width: var(--container);
+      margin: 0 auto;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      padding: 0 32px;
+    }
+    .brand {
+      font-family: var(--sans-en) !important;
+      font-weight: 700 !important;
+      font-size: .96rem !important;
+      color: #ffffff !important;
+      letter-spacing: -.01em;
+    }
+    .nav {
+      display: flex;
+      gap: 26px;
+      margin-left: auto;
+      font-family: var(--sans-jp);
+      font-size: .86rem;
+      color: rgba(255,255,255,.85) !important;
+      font-weight: 500;
+    }
+    .nav a {
+      color: rgba(255,255,255,.85) !important;
+      transition: color .2s;
+    }
+    .nav a:hover {
+      color: #ffffff !important;
+    }
+    .header-cta {
+      font-family: var(--sans-en) !important;
+      font-size: .82rem !important;
+      font-weight: 700 !important;
+      padding: 9px 24px;
+      border: 1.5px solid #ffffff;
+      color: #ffffff !important;
+      text-transform: uppercase;
+      transition: all .2s ease;
+      display: inline-block;
+    }
+    .header-cta:hover {
+      background: #ffffff;
+      color: var(--ink) !important; /* ホバー時に文字を反転 */
+    }
     .page-hero{
       position:relative;min-height:74vh;
       background-image:url("/assets/%E5%96%B6%E6%A5%AD%E3%83%AD%E3%83%BC%E3%83%97%E3%83%ACAI.png");
@@ -127,11 +180,11 @@
   <div class="header-inner">
     <a href="/" class="brand">Anaheim Electronics</a>
     <nav class="nav">
-      <a href="/#services">サービス</a>
-      <a href="/#what">事業</a>
-      <a href="/contact/">お問い合わせ</a>
+      <a href="/#services">FEATURES</a>
+      <a href="/journal/">JOURNAL</a>
+      <a href="/contact/">CONTACT</a>
     </nav>
-    <a href="/" class="header-cta">← Home</a>
+    <a href="/pippon-time/" class="header-cta">PIPPON TIME →</a>
   </div>
 </header>
 
