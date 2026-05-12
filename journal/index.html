@@ -6,6 +6,42 @@
   <title>JOURNAL | Anaheim Electronics</title>
   
   <style>
+    /* --- フォントの読み込みを復活させる --- */
+    @font-face {
+      font-family: "Signale";
+      src: url("/assets/signale.woff") format("woff");
+      font-weight: 400 900;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "Kokumin";
+      src: url("/assets/kokumin.ttf") format("truetype");
+      font-weight: 400 900;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    /* 既存の :root の中身もこれに合わせて調整 */
+    :root {
+      --display: "Signale", "Anton", sans-serif;
+      --sans-en: "Inter", system-ui, sans-serif;
+      --sans-jp: "Kokumin", "Hiragino Maru Gothic ProN", "Noto Sans JP", sans-serif;
+      /* ...その他の変数はそのまま... */
+    }
+
+    /* ロゴ（brand）にSignaleを適用 */
+    .brand {
+      font-family: var(--display) !important; /* これでロゴがSignaleになります */
+      letter-spacing: 0.05em;
+    }
+
+    /* 見出し（H1）にもSignaleを適用 */
+    .journal-hero h1 {
+      font-family: var(--display);
+      text-transform: uppercase;
+    }
+    
     /* --- 1. トップページから拝借した共通スタイル --- */
     :root {
       --bg:#ffffff; --ink:#10081a; --ink-soft:#3d2e44; --ink-mute:#7d6c80;
