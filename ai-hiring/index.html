@@ -283,11 +283,42 @@
       margin-bottom: 24px;
     }
 
+    /* --- レスポンシブ対応：スマホ・タブレット表示の最適化 --- */
     @media (max-width: 900px) {
-      .evidence-desc h3 { white-space: normal; font-size: 1.8rem; }
+      /* ヘッダー：ナビを消してスッキリさせる */
+      .nav { display: none; }
+      .header-inner { justify-content: space-between; }
+      
+      /* ヒーロー：文字サイズをスマホ用に調整 */
+      .page-hero { min-height: 60vh; padding: 100px 24px 50px; justify-content: center; }
+      .hero-inner { text-align: center; }
+      .hero-title { font-size: 3.5rem; }
+
+      /* ボディ：余白を調整 */
+      .page-body { padding: 60px 24px; }
+      
+      /* 特徴：2列から1列へ */
+      .features { grid-template-columns: 1fr; }
+
+      /* 【重要】動画セクション：横幅を100%にして突き抜け防止 */
       .evidence-main { flex-direction: column; text-align: center; gap: 32px; }
-      .video-container { flex: 0 0 auto; width: 100%; max-width: 500px; }
-      .evidence-grid { grid-template-columns: 1fr; }
+      .video-container { 
+        flex: 0 0 auto !important; 
+        width: 100% !important; 
+        max-width: 100% !important; 
+        height: auto !important; 
+        aspect-ratio: 16 / 9; /* 横長を維持 */
+      }
+      .evidence-desc h3 { white-space: normal; font-size: 1.8rem; }
+
+      /* その他サービス：2列から1列へ */
+      .other-list { grid-template-columns: 1fr; }
+
+      /* フッター：縦並びに変更 */
+      .footer-inner { flex-direction: column; align-items: flex-start; gap: 20px; }
+      
+      /* CTAブロック：パディング調整 */
+      .cta-block { padding: 40px 24px; }
     }
   </style>
 </head>
