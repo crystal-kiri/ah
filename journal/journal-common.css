@@ -186,21 +186,3 @@ body {
   transition: transform 0.2s;
   border-bottom: none !important; /* 下線を消す */
 }
-
-/* VIEW ALL INSIGHTS リンク */
-.view-all-link {
-  color: #ffffff !important; /* 紫色を強制上書き */
-  font-family: 'Signale', sans-serif;
-  font-size: 0.85rem;
-  text-decoration: none;
-  border-bottom: 1px solid #ffffff !important;
-  opacity: 0.8;
-}
-
-.cta-button:hover, .view-all-link:hover {
-  opacity: 0.7;
-}
-
-@media (max-width: 600px) {
-  .cta-actions { flex-direction: column; gap: 20px; }
-}
