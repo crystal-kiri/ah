@@ -8,10 +8,45 @@
 
 body { font-family: var(--sans-jp); background: var(--bg); color: var(--ink); line-height: 1.8; margin: 0; }
 
-/* ヘッダー */
-.header { position: fixed; top: 0; left: 0; right: 0; z-index: 100; height: 80px; background: #000; display: flex; align-items: center; }
-.header-inner { max-width: 1280px; margin: 0 auto; width: 100%; display: flex; align-items: center; padding: 0 32px; }
-.brand { color: #fff; font-weight: 700; text-decoration: none; }
+/* --- Header Styles --- */
+.header {
+  position: fixed; /* 常に画面上部に固定 */
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  height: 80px;
+  background: #000000; /* 背景を真っ黒に */
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* 控えめな境界線 */
+}
+
+.header-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 32px;
+}
+
+.brand {
+  color: #ffffff;
+  font-family: var(--display); /* 先ほど設定したカッコいいフォント */
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+}
+
+.nav a {
+  transition: opacity 0.3s;
+}
+
+.nav a:hover {
+  opacity: 0.6;
+}
 
 /* 記事コンテンツ */
 .post-container { max-width: var(--container); margin: 0 auto; padding: 160px 32px 100px; }
