@@ -154,8 +154,32 @@
     }
     .cta-block h3{font-family:var(--sans-jp);font-weight:700;font-size:clamp(1.4rem,2.8vw,2rem);line-height:1.5;margin-bottom:14px}
     .cta-block p{color:rgba(255,255,255,.9);margin-bottom:28px;font-size:.96rem}
-    .btn-primary{display:inline-flex;align-items:center;gap:10px;height:54px;padding:0 30px;border-radius:999px;font-family:var(--sans-jp);font-weight:700;font-size:.96rem;color:var(--accent-deep);background:#fff;transition:transform .15s,background .2s}
-    .btn-primary:hover{transform:translateY(-2px);background:var(--bg-soft)}
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center; /* 文字を中央に */
+      gap: 10px;
+      height: 54px;
+      padding: 0 40px; /* 少し横幅を広げると綺麗です */
+      border-radius: 999px;
+      font-family: var(--sans-jp);
+      font-weight: 700;
+      font-size: .96rem;
+
+      /* 背景を白、文字を濃い紫に固定 */
+      background: #ffffff !important;
+      color: var(--accent-deep) !important; 
+      
+      transition: transform .15s, background .2s;
+      text-decoration: none !important;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      background: var(--bg-soft) !important;
+      /* ホバーした時も文字色は濃い紫のまま */
+      color: var(--accent-deep) !important;
+    }
 
     /* Other services */
     .other{padding:80px 32px;background:var(--bg-soft);border-top:1px solid var(--line)}
