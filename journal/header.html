@@ -1,6 +1,10 @@
-<div id="header-placeholder"></div>
-<script>
-  fetch('../header.html')
-    .then(res => res.text())
-    .then(data => document.getElementById('header-placeholder').innerHTML = data);
-</script>
+<header class="header">
+  <div class="header-inner">
+    <a href="/" class="brand">Anaheim Electronics</a>
+    <nav class="nav" style="display:flex; gap:28px; margin-left:auto;">
+      <a href="/#services" style="color:rgba(255,255,255,.85); font-size:.86rem; text-decoration:none;">FEATURES</a>
+      <a href="/journal/" style="color:rgba(255,255,255,.85); font-size:.86rem; text-decoration:none;">JOURNAL</a>
+      <a href="/contact/" style="color:rgba(255,255,255,.85); font-size:.86rem; text-decoration:none;">CONTACT</a>
+    </nav>
+  </div>
+</header>
