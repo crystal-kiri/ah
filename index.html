@@ -492,7 +492,20 @@
 
     /* Responsive */
     @media (max-width:980px){
-      .nav{display:none}
+      @media (max-width:980px){
+  /* .nav{display:none} を消して、以下を追加 */
+  .nav {
+    display: flex !important; /* 強制的に表示 */
+    gap: 15px !important;    /* スマホ用に少し間隔を詰める */
+  }
+  .nav a {
+    font-size: 0.65rem !important; /* スマホ用に文字を小さく */
+  }
+  
+  .header-cta {
+    display: none; /* ボタン（PIPPON TIME）は場所を取るのでスマホでは隠す */
+  }
+}
       .hero-wrapper{height:88vh}
       .scroll-text{bottom:40px}
       .intro{padding:80px 24px 60px}
