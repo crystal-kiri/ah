@@ -1,38 +1,31 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <title>JOURNAL | Anaheim Electronics</title>
-    <link rel="stylesheet" href="../style.css">
-</head>
-<body class="journal-page">
+/* 既存のコードを壊さず、JOURNAL対応と英語化だけを反映 */
 
-<header class="header">
-  </header>
+/* ナビゲーションの文字を英語用に見やすく */
+.nav a {
+  font-family: var(--sans-en) !important;
+  font-size: 0.75rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.15em !important;
+  text-transform: uppercase !important;
+}
 
-<main class="journal-container">
-    <article class="post">
-        <header class="post-header">
-            <div class="post-meta">MAY 12, 2026 / DESIGN THEORY</div>
-            <h1>ノイズを削ぎ落とす。<br>「引き算」がもたらす現場の静寂。</h1>
-        </header>
+/* ボタンの文字化け（黒くなって見えない）を修正 */
+.header-cta {
+  font-family: var(--sans-en) !important;
+  font-size: 0.75rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.1em !important;
+  text-transform: uppercase !important;
+  
+  /* 透明度を活かしつつ、白を強調 */
+  color: #ffffff !important; 
+  border: 1px solid rgba(255, 255, 255, 0.8) !important; 
+  border-radius: 2px !important; /* 角を少し立たせる */
+  background: rgba(255, 255, 255, 0.1) !important;
+  backdrop-filter: blur(4px);
+}
 
-        <div class="post-content">
-            <p class="lead">
-                私たちは、あらゆるものが過剰に連結された時代に生きている。しかし、現場が求めているのは接続性ではなく、一瞬の「静寂」だった。
-            </p>
-            
-            <figure class="full-width">
-                <img src="../assets/kirikirikiri_Messy_office.png" alt="Messy Office">
-                <figcaption>Photo: The reality of modern workspaces.</figcaption>
-            </figure>
-
-            <p>
-                「多機能であること」が正義とされるDXの潮流の中で、Anaheim Electronicsはあえて逆方向に舵を切った。私たちが開発したタイムカードに、複雑な集計機能や管理画面の迷路はない。
-            </p>
-            </div>
-    </article>
-</main>
-
-</body>
-</html>
+.header-cta:hover {
+  background: #ffffff !important;
+  color: #000000 !important;
+}
