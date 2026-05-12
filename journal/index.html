@@ -6,121 +6,96 @@
   <title>JOURNAL | Anaheim Electronics</title>
   
   <style>
-    /* --- フォントの読み込みを復活させる --- */
-    @font-face {
-      font-family: "Signale";
-      src: url("/assets/signale.woff") format("woff");
-      font-weight: 400 900;
-      font-style: normal;
-      font-display: swap;
+    /* --- 1. フォント定義（トップページと完全一致） --- */
+    @font-face{
+      font-family:"Signale";
+      src:url("/assets/signale.woff") format("woff");
+      font-weight:400 900;font-style:normal;font-display:swap;
     }
-    @font-face {
-      font-family: "Kokumin";
-      src: url("/assets/kokumin.ttf") format("truetype");
-      font-weight: 400 900;
-      font-style: normal;
-      font-display: swap;
+    @font-face{
+      font-family:"Kokumin";
+      src:url("/assets/kokumin.ttf") format("truetype");
+      font-weight:400 900;font-style:normal;font-display:swap;
     }
 
-    /* 既存の :root の中身もこれに合わせて調整 */
-    :root {
-      --display: "Signale", "Anton", sans-serif;
-      --sans-en: "Inter", system-ui, sans-serif;
-      --sans-jp: "Kokumin", "Hiragino Maru Gothic ProN", "Noto Sans JP", sans-serif;
-      /* ...その他の変数はそのまま... */
-    }
-
-    /* ロゴ（brand）にSignaleを適用 */
-    .brand {
-      font-family: var(--display) !important; /* これでロゴがSignaleになります */
-      letter-spacing: 0.05em;
-    }
-
-    /* 見出し（H1）にもSignaleを適用 */
-    .journal-hero h1 {
-      font-family: var(--display);
-      text-transform: uppercase;
-    }
-    
-    /* --- 1. トップページから拝借した共通スタイル --- */
-    :root {
-      --bg:#ffffff; --ink:#10081a; --ink-soft:#3d2e44; --ink-mute:#7d6c80;
-      --magenta:#e91e63; --container:1280px;
+    /* --- 2. 変数定義（トップページから移植） --- */
+    :root{
+      --bg:#ffffff; --bg-soft:#f6f4f0;
+      --ink:#10081a; --ink-soft:#3d2e44; --ink-mute:#7d6c80;
+      --magenta:#e91e63; --magenta-deep:#a8124a;
+      --container:1280px;
       --display:"Signale","Anton",sans-serif;
       --sans-en:"Inter",system-ui,sans-serif;
       --sans-jp:"Kokumin","Hiragino Maru Gothic ProN","Noto Sans JP",sans-serif;
     }
-    body { font-family: var(--sans-jp); background: var(--bg); color: var(--ink); margin: 0; line-height: 1.95; -webkit-font-smoothing: antialiased; }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{
+      font-family:var(--sans-jp); background:var(--bg); color:var(--ink);
+      line-height:1.95; font-feature-settings:"palt"; -webkit-font-smoothing:antialiased;
+    }
+
+    /* --- 3. Header（トップページの構造を再現） --- */
+    .header{
+      position:absolute; top:0; left:0; right:0; z-index:30; height:80px;
+      background: #000; /* ジャーナルは白背景なので、ヘッダー自体を黒く塗ります */
+    }
+    .header-inner{
+      max-width:var(--container); margin:0 auto; height:100%;
+      display:flex; align-items:center; gap:28px; padding:0 32px;
+    }
+    .brand{
+      font-family:var(--sans-en); font-weight:700;
+      font-size:.96rem; letter-spacing:-.01em; color:#fff;
+      /* mix-blend-modeは背景が黒なので不要 */
+    }
+    .nav{
+      display:flex; gap:28px; margin-left:auto;
+      font-family:var(--sans-jp); font-size:.86rem;
+      color:rgba(255,255,255,.85); font-weight:500;
+    }
+    .nav a:hover{color:#fff}
     
-    /* --- Header：ここをトップページと完全に一致させます --- */
-    .header {
-      position: absolute; /* 他のページと同じ配置 */
-      top: 0;
-      left: 0;
-      width: 100%; /* 横幅いっぱい */
-      height: 80px;
-      background: #000000; /* 背景を真っ黒に固定 */
-      z-index: 999;
-      display: flex;
-      align-items: center;
-    }
-    .header-inner {
-      width: 100%;
-      max-width: var(--container); /* ai-hiringと同じ1180px */
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      padding: 0 32px;
-    }
-    .brand {
-      font-family: var(--sans-en);
-      font-weight: 700;
-      color: #ffffff !important;
-      font-size: .96rem;
-    }
-    .nav {
-      margin-left: auto;
-      display: flex;
-      gap: 26px;
-    }
-    .nav a {
-      color: rgba(255,255,255,0.85) !important;
-      font-size: .86rem;
-      font-weight: 500;
-    }
     .header-cta {
-      margin-left: 28px;
-      color: #ffffff !important;
-      border: 1px solid rgba(255,255,255,0.3);
-      padding: 9px 16px;
-      border-radius: 999px;
-      font-size: .82rem;
-      font-weight: 600;
+      font-family: var(--sans-en); font-size: .82rem; font-weight: 700;
+      letter-spacing: .08em; padding: 9px 24px; border-radius: 2px;
+      color: #ffffff; border: 1.5px solid #ffffff;
+      text-transform: uppercase; transition: all .2s ease;
+    }
+    .header-cta:hover { background: #ffffff; color: #000000; }
+
+    /* --- 4. Journal 独自レイアウト --- */
+    .journal-hero { 
+      margin-top: 180px; text-align: center; padding: 0 24px 80px; 
+    }
+    .journal-hero h1 { 
+      font-family: var(--display); /* Signaleを適用 */
+      font-size: clamp(3rem, 10vw, 7rem); font-weight: 400; line-height: .95; 
+      letter-spacing: .005em; text-transform: uppercase;
+    }
+    .journal-hero .label {
+      font-family: var(--sans-en); font-size: .78rem; font-weight: 600;
+      letter-spacing: .22em; text-transform: uppercase; color: var(--ink-mute);
+      margin-bottom: 24px; display: block;
     }
 
-    /* ジャーナルのコンテンツがヘッダーに被らないようにする */
-    main {
-      padding-top: 80px; 
+    .journal-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr); /* 2カラム */
+      gap: 40px; max-width: 1100px; margin: 0 auto 100px; padding: 0 32px;
     }
-    /* --- 2. ジャーナル専用のレイアウト --- */
-    .journal-hero { margin-top: 160px; text-align: center; padding: 0 24px 80px; max-width: 1100px; margin-left: auto; margin-right: auto; }
-    .journal-hero .label { font-family: var(--sans-en); font-size: 0.8rem; letter-spacing: 0.2em; color: var(--ink-mute); text-transform: uppercase; }
-    .journal-hero h1 { font-family: var(--sans-en); font-size: clamp(3rem, 7vw, 6rem); line-height: 1.1; letter-spacing: -0.02em; font-weight: 800; margin: 16px 0 0; }
-
-    .journal-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 60px 40px; max-width: 1100px; margin: 0 auto 120px; padding: 0 32px; }
-    .journal-item { display: flex; flex-direction: column; text-decoration: none; color: inherit; transition: transform 0.3s ease; }
-    .journal-item:hover { transform: translateY(-5px); }
-    .journal-item .post-meta { font-family: var(--sans-en); font-size: 0.75rem; letter-spacing: 0.1em; color: var(--ink-mute); margin-bottom: 16px; display: flex; gap: 15px; }
-    .journal-item h2 { font-size: 1.5rem; line-height: 1.45; font-weight: 700; color: var(--ink); margin: 0; border-top: 1px solid #eee; padding-top: 20px; }
-    .journal-item:hover h2 { color: var(--magenta); }
-
-    /* フッター */
-    .footer { border-top: 1px solid #eee; padding: 40px 32px; margin-top: 100px; }
-    .footer-inner { max-width: var(--container); margin: 0 auto; display: flex; justify-content: space-between; font-size: 0.8rem; color: var(--ink-mute); }
+    .journal-item {
+      padding-top: 40px; border-top: 1px solid var(--line);
+      text-decoration: none; color: inherit; transition: .3s;
+    }
+    .journal-item:hover { border-top-color: var(--magenta); }
+    .post-meta { 
+      font-family: var(--sans-en); font-size: .75rem; font-weight: 700;
+      letter-spacing: .15em; color: var(--ink-mute); margin-bottom: 12px; display: block;
+    }
+    .journal-item h2 { font-size: 1.5rem; line-height: 1.4; font-weight: 900; }
 
     @media (max-width: 768px) {
-      .nav { display: none; } /* スマホでは一旦隠す */
-      .journal-hero { margin-top: 120px; }
+      .nav { display: none; }
       .journal-grid { grid-template-columns: 1fr; }
     }
   </style>
