@@ -8,11 +8,12 @@
 </head>
 <body>
 
-<header class="header">
-  <div class="header-inner">
-    <a href="/" class="brand">Anaheim Electronics</a>
-  </div>
-</header>
+<div id="header-placeholder"></div>
+<script>
+  fetch('../header.html')
+    .then(res => res.text())
+    .then(data => document.getElementById('header-placeholder').innerHTML = data);
+</script>
 
 <article class="post-container">
   <header class="post-header">
