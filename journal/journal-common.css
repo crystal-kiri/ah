@@ -1,12 +1,39 @@
 /* ジャーナル共通設定 */
+/* --- Fonts Settings --- */
 :root {
-  --bg: #ffffff; --ink: #10081a;
-  --container: 1000px; /* 記事は少し狭めが読みやすい */
-  --display: "Signale", "Anton", sans-serif;
-  --sans-jp: "Kokumin", "Hiragino Maru Gothic ProN", "Noto Sans JP", sans-serif;
+  /* 英字用（インパクトのある見出し用） */
+  --font-display: "Signale", "Anton", sans-serif;
+  /* 日本語用（読みやすくモダンな丸ゴシック系） */
+  --font-sans-jp: "Kokumin", "Hiragino Maru Gothic ProN", "Noto Sans JP", sans-serif;
 }
 
-body { font-family: var(--sans-jp); background: var(--bg); color: var(--ink); line-height: 1.8; margin: 0; }
+/* 全体に適用 */
+body {
+  font-family: var(--font-sans-jp);
+  -webkit-font-smoothing: antialiased; /* 文字を滑らかに */
+  color: #10081a;
+}
+
+/* 記事タイトルと見出し */
+.post-title, .post-body h2, .post-body h3 {
+  font-family: var(--font-sans-jp); /* タイトルを力強くしたいならここもKokumin系 */
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* 欧文パーツ（日付、カテゴリ、ボタンなど） */
+.post-date, .btn-cta, .brand, .nav a, .post-meta {
+  font-family: var(--font-display);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* 記事本文の読みやすさ調整 */
+.post-body {
+  font-size: 1.1rem;
+  line-height: 1.9;
+  letter-spacing: 0.03em;
+}
 
 /* --- Header Styles --- */
 .header {
