@@ -1,196 +1,103 @@
-/* ジャーナル共通設定 */
-/* --- Fonts Settings --- */
+@charset "UTF-8";
+
+/* --- 1. 基本フォント設定（他ページと統一） --- */
 :root {
-  /* 英字用（インパクトのある見出し用） */
   --font-display: "Signale", "Anton", sans-serif;
-  /* 日本語用（読みやすくモダンな丸ゴシック系） */
-  --font-sans-jp: "Kokumin", "Hiragino Maru Gothic ProN", "Noto Sans JP", sans-serif;
+  --font-base: "Kokumin", "Hiragino Maru Gothic ProN", "Noto Sans JP", sans-serif;
 }
 
-/* 全体に適用 */
 body {
-  font-family: var(--font-sans-jp);
-  -webkit-font-smoothing: antialiased; /* 文字を滑らかに */
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
   color: #10081a;
+  font-family: var(--font-base);
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* 記事タイトルと見出し */
-.post-title, .post-body h2, .post-body h3 {
-  font-family: var(--font-sans-jp); /* タイトルを力強くしたいならここもKokumin系 */
-  font-weight: 700;
-  letter-spacing: -0.02em;
+/* --- 2. レイアウト（横幅を絞って中央寄せ） --- */
+.post-container {
+  max-width: 800px; /* ここが重要：広がりすぎを防止 */
+  margin: 140px auto 100px; /* 上にヘッダー分の余白、左右中央 */
+  padding: 0 24px;
 }
 
-/* 欧文パーツ（日付、カテゴリ、ボタンなど） */
-.post-date, .btn-cta, .brand, .nav a, .post-meta {
-  font-family: var(--font-display);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
-
-/* 記事本文の読みやすさ調整 */
-.post-body {
-  font-size: 1.1rem;
-  line-height: 1.9;
-  letter-spacing: 0.03em;
-}
-
-/* --- Header Styles --- */
+/* --- 3. ヘッダー（黒バー・文字白） --- */
 .header {
-  position: fixed; /* 常に画面上部に固定 */
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
+  position: fixed;
+  top: 0; left: 0; right: 0;
   height: 80px;
-  background: #000000; /* 背景を真っ黒に */
+  background: #000 !important;
+  z-index: 9999;
   display: flex;
   align-items: center;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* 控えめな境界線 */
 }
 
 .header-inner {
-  max-width: 1280px;
+  max-width: 1200px; /* ヘッダーは少し広め */
   margin: 0 auto;
   width: 100%;
   display: flex;
+  justify-content: space-between;
   align-items: center;
   padding: 0 32px;
 }
 
-.brand {
-  color: #ffffff;
-  font-family: var(--display); /* 先ほど設定したカッコいいフォント */
-  font-size: 1.2rem;
-  font-weight: 700;
-  text-decoration: none;
-  letter-spacing: 0.1em;
-}
-
-.nav a {
-  transition: opacity 0.3s;
-}
-
-.nav a:hover {
-  opacity: 0.6;
-}
-
-/* 記事コンテンツ */
-.post-container { max-width: var(--container); margin: 0 auto; padding: 160px 32px 100px; }
-.post-header { margin-bottom: 60px; text-align: center; }
-.post-date { font-family: sans-serif; font-size: 0.9rem; color: #777; }
-.post-title { font-size: 2.5rem; line-height: 1.3; margin: 20px 0; }
-
-.post-body h2 { font-size: 1.8rem; margin: 60px 0 24px; border-bottom: 1px solid #eee; padding-bottom: 10px; }
-.post-body p { margin-bottom: 24px; font-size: 1.1rem; }
-
-/* 問い合わせCTA */
-/* 記事下CTAセクション */
-.post-cta {
-  background: #10081a; /* アナハイムのインク色（濃紺/黒） */
-  color: #ffffff;
-  padding: 80px 40px;
-  margin-top: 120px;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-  border-radius: 4px;
-}
-
-/* 少し背景にテック感を出す装飾 */
-.post-cta::before {
-  content: "ANAHEIM ELECTRONICS / SYSTEM DIVISION";
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  font-family: var(--sans-en);
-  font-size: 10px;
-  letter-spacing: 0.3em;
-  opacity: 0.3;
-}
-
-.post-cta h3 {
-  font-family: var(--sans-jp);
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 24px;
-  letter-spacing: 0.05em;
-}
-
-.post-cta p {
-  font-size: 1.1rem;
-  color: rgba(255, 255, 255, 0.8);
-  max-width: 600px;
-  margin: 0 auto 40px;
-  line-height: 1.8;
-}
-
-/* ボタン：洗練された反転デザイン */
-.btn-cta {
-  display: inline-block;
-  background: #ffffff;
-  color: #10081a !important;
-  padding: 20px 56px;
-  font-family: var(--sans-en);
-  font-size: 0.9rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
-  text-decoration: none !important;
-  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
-  border: 1px solid #ffffff;
-}
-
-.btn-cta:hover {
-  background: transparent;
-  color: #ffffff !important;
-  transform: scale(1.05);
-}
-/* 関連記事エリア */
-.post-related {
-  margin-top: 80px;
-  border-top: 1px solid #eee;
-  padding-top: 40px;
-}
-.related-title {
-  font-family: var(--font-display);
-  font-size: 0.8rem;
-  color: #888;
-  margin-bottom: 24px;
-}
-.related-item {
-  display: block;
-  font-weight: 700;
-  color: #10081a;
-  text-decoration: none;
-  font-size: 1.1rem;
-  transition: opacity 0.3s;
-}
-.related-item:hover { opacity: 0.6; }
-
-/* 二連ボタンの調整 */
-.cta-buttons {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-}
-.btn-secondary {
-  display: inline-block;
-  padding: 20px 40px;
-  border: 1px solid rgba(255,255,255,0.3);
+.brand, .nav a {
   color: #fff !important;
   text-decoration: none;
   font-family: var(--font-display);
-  font-size: 0.8rem;
-  transition: all 0.3s;
+  text-transform: uppercase;
 }
-.btn-secondary:hover { background: rgba(255,255,255,0.1); }
-/* スマホ対応 */
-@media (max-width: 768px) {
-  .post-cta {
-    padding: 60px 24px;
-  }
-  .post-cta h3 {
-    font-size: 1.5rem;
-  }
+
+/* --- 4. 記事内の装飾 --- */
+.post-header {
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.post-date {
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  color: #888;
+  letter-spacing: 0.1em;
+}
+
+.post-title {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin: 10px 0;
+  line-height: 1.3;
+}
+
+.post-body h2 {
+  font-size: 1.8rem;
+  margin: 60px 0 30px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #10081a;
+}
+
+.post-body p {
+  margin-bottom: 30px;
+}
+
+/* --- 5. CTAエリア --- */
+.post-cta {
+  margin-top: 100px;
+  padding: 60px 40px;
+  background: #10081a;
+  color: #fff;
+  text-align: center;
+}
+
+.btn-cta {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 15px 40px;
+  background: #fff;
+  color: #10081a !important;
+  text-decoration: none;
+  font-family: var(--font-display);
+  font-weight: bold;
 }
