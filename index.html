@@ -170,28 +170,28 @@
     }
     .nav a{transition:color .2s}
     .nav a:hover{color:#fff}
+    
     .header-cta {
-  font-family: var(--sans-en);
-  font-size: .82rem;
-  font-weight: 700; /* 少し太くして存在感を出す */
-  letter-spacing: .08em; /* 字間を広げて「英語らしさ」を強調 */
-  padding: 9px 24px; /* 横幅を少し広げて優雅に */
-  border-radius: 2px; /* 丸み（999px）を捨てて、あえて角立たせるのがWIRED流 */
-  
-  /* 色の設定：暗い背景でも見えるように「白」に固定 */
-  color: #ffffff; 
-  background: transparent;
-  border: 1.5px solid #ffffff; /* 枠線も白にする */
-  
-  backdrop-filter: blur(4px);
-  transition: all .2s ease;
-  text-transform: uppercase;
+      font-family: var(--sans-en);
+      font-size: .82rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      padding: 9px 24px;
+      border-radius: 2px;
+      color: #ffffff; 
+      background: transparent;
+      border: 1.5px solid #ffffff;
+      backdrop-filter: blur(4px);
+      transition: all .2s ease;
+      text-transform: uppercase;
+      display: inline-block; /* これを追加すると位置が安定します */
+    } /* ← この閉じカッコが抜けていました！ */
 
-.header-cta:hover {
-  background: #ffffff; /* 背景を白にする */
-  color: #000000;      /* 文字を黒にする */
-  border-color: #ffffff;
-}
+    .header-cta:hover {
+      background: #ffffff;
+      color: #000000;
+      border-color: #ffffff;
+    }
     /* Hero — particle */
     .hero-wrapper{
       position:relative;width:100vw;height:85vh;
