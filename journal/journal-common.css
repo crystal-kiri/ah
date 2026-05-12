@@ -101,3 +101,39 @@ body {
   font-family: var(--font-display);
   font-weight: bold;
 }
+
+/* 比較表のスタイル */
+.comparison-table-wrapper {
+  margin: 40px 0;
+  overflow-x: auto; /* スマホで横スクロール可能に */
+}
+
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+  min-width: 600px; /* 潰れ防止 */
+}
+
+.comparison-table th, .comparison-table td {
+  padding: 15px;
+  border: 1px solid #eee;
+  text-align: center;
+}
+
+.comparison-table th {
+  background-color: #f8f8f8;
+  font-weight: bold;
+}
+
+/* Deep AIの列を強調 */
+.comparison-table .highlight {
+  background-color: #f0f7ff; /* 薄い青で強調 */
+  font-weight: bold;
+  border: 2px solid #10081a;
+}
+
+.comparison-table thead th.highlight {
+  background-color: #10081a;
+  color: #fff;
+}
