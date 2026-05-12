@@ -178,20 +178,19 @@
   padding: 9px 24px; /* 横幅を少し広げて優雅に */
   border-radius: 2px; /* 丸み（999px）を捨てて、あえて角立たせるのがWIRED流 */
   
-  /* 色の設定：背景が白なら「黒枠に白文字」か「白枠に黒文字」に */
-  color: var(--ink); 
+  /* 色の設定：暗い背景でも見えるように「白」に固定 */
+  color: #ffffff; 
   background: transparent;
-  border: 1.5px solid var(--ink); /* 透明度をなくしてクッキリさせる */
+  border: 1.5px solid #ffffff; /* 枠線も白にする */
   
   backdrop-filter: blur(4px);
   transition: all .2s ease;
-  text-transform: uppercase; /* 小文字混じりなら強制的に大文字へ */
-}
+  text-transform: uppercase;
 
 .header-cta:hover {
-  background: var(--ink);
-  color: #fff;
-  border-color: var(--ink);
+  background: #ffffff; /* 背景を白にする */
+  color: #000000;      /* 文字を黒にする */
+  border-color: #ffffff;
 }
     /* Hero — particle */
     .hero-wrapper{
