@@ -8,11 +8,23 @@
 </head>
 <body>
 
-<div id="header-placeholder"></div>
+<header class="header" id="global-header"></header>
+
 <script>
+  // 記事ファイルから見て、一つ上の階層にあるheader.htmlを呼び出す
   fetch('../header.html')
-    .then(res => res.text())
-    .then(data => document.getElementById('header-placeholder').innerHTML = data);
+    .then(response => {
+      if (!response.ok) throw new Error('Network response was not ok');
+      return response.text();
+    })
+    .then(data => {
+      document.getElementById('global-header').innerHTML = data;
+    })
+    .catch(error => {
+      console.error('Header load error:', error);
+      // ローカルで見ている時のために最低限のバックアップリンクを表示させても良い
+      document.getElementById('global-header').innerHTML = '<div class="header-inner"><a href="/" class="brand">Anaheim Electronics</a></div>';
+    });
 </script>
 
 <article class="post-container">
