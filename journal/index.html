@@ -62,6 +62,73 @@
 
     /* メインコンテンツの位置調整 */
     main { padding-top: 100px; }
+    /* --- ジャーナル：ヒーローセクション（巨大文字） --- */
+    .journal-hero {
+      min-height: 70vh; /* 画面の高さの7割を占める */
+      display: flex;
+      align-items: center; /* 垂直中央 */
+      justify-content: center; /* 水平中央 */
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .journal-hero h1 {
+      font-family: var(--display);
+      font-size: clamp(4rem, 15vw, 11rem); /* 画面幅に合わせて巨大化 */
+      line-height: 0.85;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+      text-transform: uppercase;
+    }
+
+    /* --- 記事リスト（横並びレイアウト） --- */
+    .journal-grid {
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 0 32px 120px;
+      display: flex;
+      gap: 60px; /* 記事同士の間隔 */
+      justify-content: flex-start; /* 左から並べる（センターならcenter） */
+    }
+
+    .journal-item {
+      display: block;
+      max-width: 400px;
+      transition: opacity 0.3s;
+    }
+
+    .journal-item:hover {
+      opacity: 0.7;
+    }
+
+    .post-meta {
+      display: block;
+      font-family: var(--sans-en);
+      font-size: .75rem;
+      letter-spacing: .1em;
+      color: #7d6c80; /* 少し薄めの文字色 */
+      margin-bottom: 12px;
+    }
+
+    .journal-item h2 {
+      font-family: var(--sans-jp);
+      font-size: 1.25rem;
+      font-weight: 700;
+      line-height: 1.6;
+      color: var(--ink);
+    }
+
+    /* スマホ対応：縦に並べる */
+    @media (max-width: 900px) {
+      .journal-grid {
+        flex-direction: column;
+        gap: 40px;
+      }
+      .journal-hero h1 {
+        font-size: 4.5rem; /* スマホではハミ出さないサイズに */
+      }
+    }
+    
 </style>
 </head>
 <body>
