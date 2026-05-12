@@ -313,10 +313,25 @@
         font-size: 1.1rem !important;
       }
 
-      /* 3. 証拠セクション（動画と説明）も縦並び */
-      .evidence-main {
-        flex-direction: column !important; /* 横並びを解除 */
-        align-items: center !important;
+      /* 証拠セクションのカード（画像付き）を縦並びに強制 */
+      .evidence-grid {
+        grid-template-columns: 1fr !important; /* ここを1カラムに */
+        gap: 24px !important;
+        margin-top: 40px !important;
+      }
+
+      .evidence-card {
+        padding: 24px !important;
+      }
+
+      .evidence-card h4 {
+        font-size: 1.2rem !important;
+        margin-bottom: 12px !important;
+      }
+
+      .evidence-card p {
+        font-size: 0.95rem !important;
+        line-height: 1.7 !important;
       }
 
       /* 4. 動画セクション：突き抜け・崩れを防止 */
