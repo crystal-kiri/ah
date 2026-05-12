@@ -5,6 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>営業研修にAIロープレを導入する企業が増えている理由 | Anaheim Electronics</title>
   <meta name="description" content="AI営業ロープレとは、AIが顧客役となって営業トレーニングを行う新しい研修手法です。本記事では、営業ロープレの課題やAI活用のメリット、導入事例、活用シーンを分かりやすく解説します。"/>
+  <style>
+    @font-face{font-family:"Signale";src:url("/assets/signale.woff") format("woff");font-weight:400 900;font-style:normal;font-display:swap}
+    @font-face{font-family:"Kokumin";src:url("/assets/kokumin.ttf") format("truetype");font-weight:400 900;font-style:normal;font-display:swap}
+  </style>
+  
   <link rel="stylesheet" href="../../journal-common.css">
 </head>
 <body>
@@ -17,44 +22,19 @@
   </header>
 
   <div class="post-body">
-    <p>営業研修に欠かせない「ロールプレイ」。
-
-しかし実際の現場では、
-
+    <p>営業研修に欠かせない「ロールプレイ」。しかし実際の現場では、
 ・練習相手が必要
 ・フィードバックが属人的
 ・十分な練習回数を確保できない
-
 といった課題を抱える企業も少なくありません。
-
 そこで注目されているのが「AI営業ロープレ」です。
 AIが顧客役を担当し、実践的な商談練習やトークトレーニングを行えることで、営業教育の効率化が進んでいます。
 本記事では、AI営業ロープレの仕組みやメリット、活用シーンについて分かりやすく解説します。</p>
     
     <h2>AIロープレが解決する現場の課題</h2>
-    <p>（さっきの見出し1の本文を入れる）</p>
-
-    </div>
-
-  <div id="cta-placeholder"></div>
-</article>
+    <p>従来のロールプレイングには、三つの「限界」が存在していました。第一に<strong>「リソースの限界」</strong>。練習相手となる上司の時間は有限ですが、AIは24時間365日、何度でも練習に付き合います。第二に<strong>「評価の不均一さ」</strong>。AIは独自のアルゴリズムに基づき、全員を同一基準で客観的に採点します。そして第三に<strong>「心理的ハードル」</strong>。対AIであれば失敗を恐れずに新しいトークを試すことができ、習熟速度が劇的に向上します。</p>
   
-<script>
-  // 記事ファイルから見て、一つ上の階層にあるheader.htmlを呼び出す
-  fetch('../header.html')
-    .then(response => {
-      if (!response.ok) throw new Error('Network response was not ok');
-      return response.text();
-    })
-    .then(data => {
-      document.getElementById('global-header').innerHTML = data;
-    })
-    .catch(error => {
-      console.error('Header load error:', error);
-      // ローカルで見ている時のために最低限のバックアップリンクを表示させても良い
-      document.getElementById('global-header').innerHTML = '<div class="header-inner"><a href="/" class="brand">Anaheim Electronics</a></div>';
-    });
-</script>
+
 
   <div class="post-body">
     <p>営業研修に欠かせない「ロールプレイ」。しかし実際の現場では、以下の課題を抱える企業も少なくありません。</p>
@@ -124,10 +104,23 @@ AIが顧客役を担当し、実践的な商談練習やトークトレーニン
         </tbody>
       </table>
     </section>
+    <h2>導入への3ステップ：明日から始めるスキルアップ</h2>
+    <p>AIロープレの導入は、驚くほどスムーズです。複雑な機材の設置は一切不要。PCかタブレットが一台あれば、その場所が最高のアカデミーに変わります。</p>
+    <ol>
+      <li><strong>シナリオ設定：</strong>ターゲットとなる顧客属性（性格や課題）をAIにプリセット。</li>
+      <li><strong>実践ロープレ：</strong>AIを相手に商談。Deep AIがリアルタイムで音声・表情をスキャン。</li>
+      <li><strong>改善サイクルの実行：</strong>解析レポートに基づき、苦手なポイントをその場ですぐに再練習。</li>
+    </ol>
+
+    <h2>結論：営業は「才能」ではなく「科学」へ</h2>
+    <p>これからの時代、営業力は個人の資質に頼るものではありません。データを活用し、誰もが最短ルートでトップセールスのスキルを再現できる環境を作ること。それこそが、アナハイム・エレクトロニクスが「Deep AI」を通じて提供する価値です。</p>
+    
+    <p>あなたのチームの可能性を、AIで解き放ちませんか？</p>
+  </div>
+</article>
   </div>
 
   <div id="cta-placeholder"></div>
-
 <script>
   // パーツ一括読み込み関数
   function loadComponent(id, path) {
@@ -143,6 +136,21 @@ AIが顧客役を担当し、実践的な商談練習やトークトレーニン
   loadComponent('cta-placeholder', '../../cta.html');
 </script>
 </article>
-
+<script>
+  // 記事ファイルから見て、一つ上の階層にあるheader.htmlを呼び出す
+  fetch('../header.html')
+    .then(response => {
+      if (!response.ok) throw new Error('Network response was not ok');
+      return response.text();
+    })
+    .then(data => {
+      document.getElementById('global-header').innerHTML = data;
+    })
+    .catch(error => {
+      console.error('Header load error:', error);
+      // ローカルで見ている時のために最低限のバックアップリンクを表示させても良い
+      document.getElementById('global-header').innerHTML = '<div class="header-inner"><a href="/" class="brand">Anaheim Electronics</a></div>';
+    });
+</script>
 </body>
 </html>
