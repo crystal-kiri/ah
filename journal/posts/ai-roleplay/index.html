@@ -9,7 +9,7 @@
     @font-face{font-family:"Signale";src:url("/assets/signale.woff") format("woff");font-weight:400 900;font-style:normal;font-display:swap}
     @font-face{font-family:"Kokumin";src:url("/assets/kokumin.ttf") format("truetype");font-weight:400 900;font-style:normal;font-display:swap}
   </style>
-  
+  <link rel="icon" href="../../../favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="../../journal-common.css">
 </head>
 <body>
@@ -122,34 +122,28 @@ AIが顧客役を担当し、実践的な商談練習やトークトレーニン
 
   <div id="cta-placeholder"></div>
 <script>
-  // パーツ一括読み込み関数
-  function loadComponent(id, path) {
+  // ヘッダーを読み込み、中のリンクを自動調整する関数
+  function loadHeaderAndFixLinks(id, path) {
     fetch(path)
       .then(res => res.ok ? res.text() : "")
       .then(data => {
-        if(data) document.getElementById(id).innerHTML = data;
+        if (data) {
+          const container = document.getElementById(id);
+          // ヘッダー内の ../ を ../../ に一括置換して階層ズレを直す
+          const fixedData = data.replace(/href="\.\.\//g, 'href="../../');
+          container.innerHTML = fixedData;
+        }
       });
   }
 
-  // 実行： ../ を ../../ に変更
-  loadComponent('global-header', '../../header.html');
-  loadComponent('cta-placeholder', '../../cta.html');
-</script>
-</article>
-<script>
-  // 記事ファイルから見て、一つ上の階層にあるheader.htmlを呼び出す
-  fetch('../header.html')
-    .then(response => {
-      if (!response.ok) throw new Error('Network response was not ok');
-      return response.text();
-    })
+  // 1. ヘッダーの読み込み（パス修正機能付き）
+  loadHeaderAndFixLinks('global-header', '../../header.html');
+
+  // 2. CTA（お問い合わせ）の読み込み
+  fetch('../../cta.html')
+    .then(res => res.ok ? res.text() : "")
     .then(data => {
-      document.getElementById('global-header').innerHTML = data;
-    })
-    .catch(error => {
-      console.error('Header load error:', error);
-      // ローカルで見ている時のために最低限のバックアップリンクを表示させても良い
-      document.getElementById('global-header').innerHTML = '<div class="header-inner"><a href="/" class="brand">Anaheim Electronics</a></div>';
+      if (data) document.getElementById('cta-placeholder').innerHTML = data;
     });
 </script>
 </body>
