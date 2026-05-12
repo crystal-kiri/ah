@@ -6,97 +6,82 @@
   <title>JOURNAL | Anaheim Electronics</title>
   
   <style>
-    /* --- 1. フォント定義（トップページと完全一致） --- */
+    /* --- 1. フォント復活（パスと名前を厳密に固定） --- */
     @font-face{
       font-family:"Signale";
       src:url("/assets/signale.woff") format("woff");
-      font-weight:400 900;font-style:normal;font-display:swap;
+      font-weight:400 900; font-style:normal; font-display:swap;
     }
     @font-face{
       font-family:"Kokumin";
       src:url("/assets/kokumin.ttf") format("truetype");
-      font-weight:400 900;font-style:normal;font-display:swap;
+      font-weight:400 900; font-style:normal; font-display:swap;
     }
 
-    /* --- 2. 変数定義（トップページから移植） --- */
     :root{
-      --bg:#ffffff; --bg-soft:#f6f4f0;
-      --ink:#10081a; --ink-soft:#3d2e44; --ink-mute:#7d6c80;
-      --magenta:#e91e63; --magenta-deep:#a8124a;
+      --bg:#ffffff; --ink:#10081a; --line:rgba(16,8,26,.10);
       --container:1280px;
-      --display:"Signale","Anton",sans-serif;
-      --sans-en:"Inter",system-ui,sans-serif;
-      --sans-jp:"Kokumin","Hiragino Maru Gothic ProN","Noto Sans JP",sans-serif;
+      --display:"Signale", sans-serif;
+      --sans-en:"Inter", system-ui, sans-serif;
+      --sans-jp:"Kokumin", sans-serif;
     }
 
-    *{box-sizing:border-box;margin:0;padding:0}
-    body{
-      font-family:var(--sans-jp); background:var(--bg); color:var(--ink);
-      line-height:1.95; font-feature-settings:"palt"; -webkit-font-smoothing:antialiased;
-    }
+    *{box-sizing:border-box; margin:0; padding:0}
+    body{ font-family:var(--sans-jp); background:var(--bg); color:var(--ink); -webkit-font-smoothing:antialiased; }
+    a{ text-decoration:none !important; color:inherit; } /* 下線を絶対消す */
 
-    /* --- 3. Header（トップページの構造を再現） --- */
+    /* --- 2. Header（黒帯・白文字・Signaleフォント） --- */
     .header{
-      position:absolute; top:0; left:0; right:0; z-index:30; height:80px;
-      background: #000; /* ジャーナルは白背景なので、ヘッダー自体を黒く塗ります */
+      position:absolute; top:0; left:0; right:0; z-index:100;
+      height:80px; background:#000000; /* 背景を真っ黒に固定 */
+      display:flex; align-items:center;
     }
     .header-inner{
-      max-width:var(--container); margin:0 auto; height:100%;
-      display:flex; align-items:center; gap:28px; padding:0 32px;
+      width:100%; max-width:var(--container); margin:0 auto;
+      display:flex; align-items:center; padding:0 32px;
     }
     .brand{
-      font-family:var(--sans-en); font-weight:700;
-      font-size:.96rem; letter-spacing:-.01em; color:#fff;
-      /* mix-blend-modeは背景が黒なので不要 */
+      font-family:var(--display); /* ここでSignaleを適用 */
+      font-weight:400; font-size:1.1rem; color:#ffffff !important;
+      letter-spacing:.02em; text-transform:lowercase; /* anaheim electronics */
     }
     .nav{
-      display:flex; gap:28px; margin-left:auto;
-      font-family:var(--sans-jp); font-size:.86rem;
-      color:rgba(255,255,255,.85); font-weight:500;
+      margin-left:auto; display:flex; gap:28px;
+      font-family:var(--sans-en); font-size:.82rem; font-weight:700;
+      color:#ffffff !important; letter-spacing:.05em;
     }
-    .nav a:hover{color:#fff}
+    .nav a{ color:#ffffff !important; transition:opacity .2s; }
+    .nav a:hover{ opacity:0.7; }
     
     .header-cta {
-      font-family: var(--sans-en); font-size: .82rem; font-weight: 700;
-      letter-spacing: .08em; padding: 9px 24px; border-radius: 2px;
-      color: #ffffff; border: 1.5px solid #ffffff;
-      text-transform: uppercase; transition: all .2s ease;
+      margin-left:28px; font-family:var(--sans-en); font-size:.78rem; font-weight:800;
+      padding:10px 22px; border:1.5px solid #ffffff; color:#ffffff !important;
+      border-radius:2px; text-transform:uppercase; transition:all .2s;
     }
-    .header-cta:hover { background: #ffffff; color: #000000; }
+    .header-cta:hover { background:#ffffff; color:#000000 !important; }
 
-    /* --- 4. Journal 独自レイアウト --- */
-    .journal-hero { 
-      margin-top: 180px; text-align: center; padding: 0 24px 80px; 
-    }
+    /* --- 3. Journal Layout --- */
+    .journal-hero { margin-top:180px; text-align:center; padding-bottom:100px; }
     .journal-hero h1 { 
-      font-family: var(--display); /* Signaleを適用 */
-      font-size: clamp(3rem, 10vw, 7rem); font-weight: 400; line-height: .95; 
-      letter-spacing: .005em; text-transform: uppercase;
+      font-family:var(--display); font-size:clamp(3.5rem, 12vw, 8rem); 
+      line-height:0.9; text-transform:uppercase; letter-spacing:-0.02em;
     }
-    .journal-hero .label {
-      font-family: var(--sans-en); font-size: .78rem; font-weight: 600;
-      letter-spacing: .22em; text-transform: uppercase; color: var(--ink-mute);
-      margin-bottom: 24px; display: block;
+    .journal-hero .label { 
+      font-family:var(--sans-en); font-size:.75rem; font-weight:700;
+      letter-spacing:.3em; color:#7d6c80; margin-bottom:20px; display:block;
     }
 
     .journal-grid {
-      display: grid; grid-template-columns: repeat(2, 1fr); /* 2カラム */
-      gap: 40px; max-width: 1100px; margin: 0 auto 100px; padding: 0 32px;
+      display:grid; grid-template-columns:1fr 1fr; gap:60px 40px;
+      max-width:1100px; margin:0 auto 120px; padding:0 32px;
     }
-    .journal-item {
-      padding-top: 40px; border-top: 1px solid var(--line);
-      text-decoration: none; color: inherit; transition: .3s;
-    }
-    .journal-item:hover { border-top-color: var(--magenta); }
-    .post-meta { 
-      font-family: var(--sans-en); font-size: .75rem; font-weight: 700;
-      letter-spacing: .15em; color: var(--ink-mute); margin-bottom: 12px; display: block;
-    }
-    .journal-item h2 { font-size: 1.5rem; line-height: 1.4; font-weight: 900; }
+    .journal-item { border-top:1px solid var(--line); padding-top:40px; }
+    .post-meta { font-family:var(--sans-en); font-size:.7rem; font-weight:700; color:#7d6c80; margin-bottom:15px; }
+    .journal-item h2 { font-size:1.6rem; font-weight:900; line-height:1.4; letter-spacing:-.01em; }
 
-    @media (max-width: 768px) {
-      .nav { display: none; }
-      .journal-grid { grid-template-columns: 1fr; }
+    @media (max-width:800px){
+      .nav, .header-cta { display:none; }
+      .journal-grid { grid-template-columns:1fr; }
     }
   </style>
 </head>
