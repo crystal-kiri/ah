@@ -313,13 +313,10 @@
         font-size: 1.1rem !important;
       }
 
-      /* 3. 特徴（Features）：横並びを縦並びに強制変更 */
-      .features {
-        grid-template-columns: 1fr !important;
-        margin: 40px 0 !important;
-      }
-      .feature {
-        padding: 24px !important;
+      /* 3. 証拠セクション（動画と説明）も縦並び */
+      .evidence-main {
+        flex-direction: column !important; /* 横並びを解除 */
+        align-items: center !important;
       }
 
       /* 4. 動画セクション：突き抜け・崩れを防止 */
