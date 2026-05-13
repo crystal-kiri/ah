@@ -84,22 +84,44 @@ body {
 
 /* --- 5. CTAエリア --- */
 .post-cta {
-  margin-top: 100px;
-  padding: 60px 40px;
+  margin: 120px 0 60px; /* 前後の余白をしっかり取る */
+  padding: 80px 40px;
   background: #10081a;
   color: #fff;
   text-align: center;
+  border-radius: 2px; /* 記事のトーンに合わせる */
+}
+
+.post-cta h2 {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.post-cta p {
+  font-size: 1rem;
+  opacity: 0.8;
+  margin-bottom: 40px;
 }
 
 .btn-cta {
   display: inline-block;
-  margin-top: 20px;
-  padding: 15px 40px;
+  padding: 18px 50px;
   background: #fff;
   color: #10081a !important;
   text-decoration: none;
   font-family: var(--font-display);
-  font-weight: bold;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  transition: all 0.3s ease;
+  border: 1px solid #fff;
+}
+
+/* ホバーで色が反転する演出 */
+.btn-cta:hover {
+  background: transparent;
+  color: #fff !important;
 }
 
 /* 比較表のスタイル */
