@@ -82,27 +82,41 @@ body {
   margin-bottom: 30px;
 }
 
-/* --- 5. CTAエリア --- */
+/* --- 5. CTAエリア：構造最適化版 --- */
 .post-cta {
-  margin: 120px 0 60px; /* 前後の余白をしっかり取る */
+  margin: 100px 0 60px;
   padding: 80px 40px;
   background: #10081a;
   color: #fff;
   text-align: center;
-  border-radius: 2px; /* 記事のトーンに合わせる */
 }
 
-.post-cta h2 {
+/* 中のコンテンツ幅を制限して読みやすく */
+.cta-content {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.post-cta h3 {
   font-family: var(--font-display);
-  font-size: 2rem;
+  font-size: 1.8rem;
   margin-bottom: 20px;
   color: #fff;
+  letter-spacing: 0.05em;
 }
 
 .post-cta p {
   font-size: 1rem;
-  opacity: 0.8;
+  line-height: 1.8;
+  opacity: 0.9;
   margin-bottom: 40px;
+}
+
+/* ボタンの親要素の余白 */
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
 }
 
 .btn-cta {
@@ -115,13 +129,11 @@ body {
   font-weight: 900;
   letter-spacing: 0.1em;
   transition: all 0.3s ease;
-  border: 1px solid #fff;
 }
 
-/* ホバーで色が反転する演出 */
 .btn-cta:hover {
-  background: transparent;
-  color: #fff !important;
+  background: #eee; /* 軽くグレーにして「押せる感」を出す */
+  transform: translateY(-2px); /* わずかに浮かせる */
 }
 
 /* 比較表のスタイル */
