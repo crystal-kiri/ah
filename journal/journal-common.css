@@ -186,3 +186,10 @@ body {
   transition: transform 0.2s;
   border-bottom: none !important; /* 下線を消す */
 }
+/* Signaleを使っている要素内の strong タグをカスタマイズ */
+.post-body strong {
+  font-weight: normal; /* フォント自体を太くしようとするのをやめる */
+  color: #000;         /* 文字色をパキッとさせる */
+  text-shadow: 0.5px 0 0 currentColor; /* 疑似的に少しだけ厚みを出す */
+  border-bottom: 2px solid var(--ink); /* 下線で強調（アナハイム流） */
+}
