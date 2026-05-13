@@ -6,170 +6,152 @@
   <title>JOURNAL | Anaheim Electronics</title>
   
   <style>
-    /* 1. 他のページと共通のフォント設定 */
-    @font-face{font-family:"Signale";src:url("/assets/signale.woff") format("woff");font-weight:400 900;font-style:normal;font-display:swap}
-    @font-face{font-family:"Kokumin";src:url("/assets/kokumin.ttf") format("truetype");font-weight:400 900;font-style:normal;font-display:swap}
-    
-    :root{
-      --bg:#ffffff; --ink:#10081a;
-      --container:1280px; /* トップページと同じ幅 */
-      --display:"Signale","Anton",sans-serif;
-      --sans-en:"Inter",system-ui,sans-serif;
-      --sans-jp:"Kokumin","Hiragino Maru Gothic ProN","Noto Sans JP",sans-serif;
-    }
-
-    /* 2. リンクの「青」と「下線」をページ全体で強制的に殺す */
-    a, a:visited, a:hover, a:active {
-      text-decoration: none !important;
-      color: inherit !important;
-    }
-
-    *{box-sizing:border-box; margin:0; padding:0}
-    body{font-family:var(--sans-jp); background:var(--bg); color:var(--ink); -webkit-font-smoothing:antialiased}
-    
-    /* 3. ヘッダー：配置・高さ・フォントを他ページと完全一致させる */
-    .header{
-      position: absolute; top:0; left:0; right:0; z-index:30; height:80px;
-      background: #000 !important; /* ここだけジャーナル専用：白背景でも見えるように */
-    }
-    .header-inner{
-      max-width:var(--container); margin:0 auto; height:100%;
-      display:flex; align-items:center; gap:28px; padding:0 32px;
-    }
-
-    /* ロゴ：ai-hiring等の設定を完全再現 */
-    .brand{
-      font-family:var(--sans-en) !important; font-weight:700 !important;
-      font-size:.96rem !important; color:#fff !important;
-    }
-
-    /* メニュー：ai-hiring等の設定を完全再現 */
-    .nav{
-      display:flex; gap:28px; margin-left:auto;
-      font-family:var(--sans-jp); font-size:.86rem; font-weight:500;
-      color:rgba(255,255,255,.85) !important;
-    }
-    .nav a{ color:rgba(255,255,255,.85) !important; }
-    .nav a:hover{ color:#fff !important; }
-    
-    /* ボタン：ai-hiring等の設定を完全再現 */
-    .header-cta {
-      font-family:var(--sans-en); font-size:.82rem; font-weight:700;
-      padding:9px 24px; border:1.5px solid #fff; color:#fff !important;
-      text-transform:uppercase; transition:all .2s;
-    }
-    .header-cta:hover{ background:#fff; color:#000 !important; }
-
-    /* メインコンテンツの位置調整 */
-    main { padding-top: 100px; }
-    /* --- ジャーナル：ヒーローセクション（巨大文字） --- */
-    .journal-hero {
-      min-height: 70vh; /* 画面の高さの7割を占める */
-      display: flex;
-      align-items: center; /* 垂直中央 */
-      justify-content: center; /* 水平中央 */
-      text-align: center;
-      padding: 60px 20px;
-    }
-
-    .journal-hero h1 {
-      font-family: var(--display);
-      font-size: clamp(4rem, 15vw, 11rem); /* 画面幅に合わせて巨大化 */
-      line-height: 0.85;
-      letter-spacing: -0.02em;
-      color: var(--ink);
-      text-transform: uppercase;
-    }
-
-    /* --- 記事リスト（横並びレイアウト） --- */
-    .journal-grid {
-      max-width: var(--container);
-      margin: 0 auto;
-      padding: 0 32px 120px;
-      display: flex;
-      gap: 60px; /* 記事同士の間隔 */
-      justify-content: flex-start; /* 左から並べる（センターならcenter） */
-    }
-
-    .journal-item {
-      display: block;
-      max-width: 400px;
-      transition: opacity 0.3s;
-    }
-
-    .journal-item:hover {
-      opacity: 0.7;
-    }
-
-    .post-meta {
-      display: block;
-      font-family: var(--sans-en);
-      font-size: .75rem;
-      letter-spacing: .1em;
-      color: #7d6c80; /* 少し薄めの文字色 */
-      margin-bottom: 12px;
-    }
-
-    .journal-item h2 {
-      font-family: var(--sans-jp);
-      font-size: 1.25rem;
-      font-weight: 700;
-      line-height: 1.6;
-      color: var(--ink);
-    }
-
-    /* --- レスポンシブ微調整 --- */
-@media (max-width: 768px) {
-  /* 1. 記事全体の余白をスマホ最適化 */
-  .post-container {
-    margin-top: 100px; /* ヘッダーが80pxなので少し詰める */
-    padding: 0 20px;
-  }
-
-  /* 2. タイトルサイズを画面幅に合わせる */
-  .post-title {
-    font-size: 1.8rem; /* 2.4remだとスマホでは大きすぎて改行が不自然になるため */
-    line-height: 1.4;
-  }
-
-  /* 3. 見出し(h2)の調整 */
-  .post-body h2 {
-    font-size: 1.4rem;
-    margin: 40px 0 20px;
-  }
-
-  /* 4. CTAエリアのボタンとリンクを縦並びにする */
-  .cta-actions {
-    flex-direction: column; /* 横並びから縦並びへ */
-    gap: 20px;
-  }
-
-  .cta-button {
-    width: 100%; /* ボタンを横いっぱいに */
-    box-sizing: border-box;
-  }
-
-  /* 5. テーブルのスクロール案内（任意） */
-  .comparison-table-wrapper::after {
-    content: "← 左右にスクロールできます";
-    display: block;
-    font-size: 0.7rem;
-    color: #888;
-    text-align: right;
-    margin-top: 8px;
-  }
+    /* 1. 根本的な溢れ防止とボックスモデルの統一 */
+*, *::before, *::after {
+  box-sizing: border-box;
 }
 
-/* --- ヘッダーのロゴが重なる場合の対策 --- */
-@media (max-width: 480px) {
-  .header-inner {
-    padding: 0 16px;
-  }
-  .brand {
-    font-size: 0.8rem; /* ロゴテキストを少し小さく */
-  }
-  .nav {
-    gap: 12px; /* メニュー間隔を詰める */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden; /* 万が一のハミ出しをカット */
+  background-color: #ffffff;
+  color: #10081a;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* フォント設定 */
+@font-face{font-family:"Signale";src:url("/assets/signale.woff") format("woff");font-weight:400 900;font-style:normal;font-display:swap}
+@font-face{font-family:"Kokumin";src:url("/assets/kokumin.ttf") format("truetype");font-weight:400 900;font-style:normal;font-display:swap}
+
+:root {
+  --bg: #ffffff;
+  --ink: #10081a;
+  --container: 1280px;
+  --display: "Signale", "Anton", sans-serif;
+  --sans-en: "Inter", system-ui, sans-serif;
+  --sans-jp: "Kokumin", "Hiragino Maru Gothic ProN", "Noto Sans JP", sans-serif;
+}
+
+/* 2. ヘッダー：横幅100%を維持しつつハミ出し防止 */
+.header {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 80px;
+  background: #000 !important;
+  z-index: 30;
+}
+
+.header-inner {
+  max-width: var(--container);
+  width: 100%;
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 24px; /* スマホで見切れないよう調整 */
+}
+
+.brand {
+  font-family: var(--sans-en) !important;
+  font-weight: 700 !important;
+  font-size: .96rem !important;
+  color: #fff !important;
+  text-decoration: none;
+}
+
+.nav {
+  display: flex;
+  gap: 24px;
+  margin-left: auto;
+  font-family: var(--sans-jp);
+  font-size: .86rem;
+}
+
+.nav a { color: rgba(255,255,255,.85) !important; text-decoration: none; }
+
+.header-cta {
+  font-family: var(--sans-en);
+  font-size: .82rem;
+  font-weight: 700;
+  padding: 9px 20px;
+  border: 1.5px solid #fff;
+  color: #fff !important;
+  text-transform: uppercase;
+  margin-left: 24px;
+  text-decoration: none;
+}
+
+/* 3. メイン・ヒーローセクション */
+main { padding-top: 80px; width: 100%; }
+
+.journal-hero {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 20px;
+  width: 100%;
+}
+
+.journal-hero h1 {
+  font-family: var(--display);
+  font-size: clamp(3rem, 12vw, 10rem); /* スマホでハミ出さないよう最小値を調整 */
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  text-transform: uppercase;
+  word-break: break-all;
+}
+
+/* 4. 【最重要】記事リストをGridに変更 */
+.journal-grid {
+  max-width: var(--container);
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 24px 100px;
+  display: grid;
+  /* 画面幅に合わせて自動でカラム数を変える */
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr));
+  gap: 60px 40px;
+}
+
+.journal-item {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  transition: opacity 0.3s;
+}
+
+.journal-item:hover { opacity: 0.7; }
+
+.post-meta {
+  display: block;
+  font-family: var(--sans-en);
+  font-size: .75rem;
+  color: #7d6c80;
+  margin-bottom: 12px;
+}
+
+.journal-item h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* 5. スマホ用レスポンシブ */
+@media (max-width: 768px) {
+  .header-inner { padding: 0 16px; }
+  .nav { display: none; } /* スマホではメニューを隠すかハンバーガーにするのが一般的 */
+  
+  .journal-hero { min-height: 40vh; }
+  .journal-grid {
+    grid-template-columns: 1fr; /* 1列に固定 */
+    gap: 40px;
   }
 }
     
