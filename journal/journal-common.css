@@ -186,10 +186,24 @@ body {
   transition: transform 0.2s;
   border-bottom: none !important; /* 下線を消す */
 }
-/* Signaleを使っている要素内の strong タグをカスタマイズ */
+
 .post-body strong {
-  font-weight: normal; /* フォント自体を太くしようとするのをやめる */
-  color: #000;         /* 文字色をパキッとさせる */
-  text-shadow: 0.5px 0 0 currentColor; /* 疑似的に少しだけ厚みを出す */
-  border-bottom: 2px solid var(--ink); /* 下線で強調（アナハイム流） */
+  font-weight: normal; /* 無理な太字化を解除 */
+  color: #10081a;      /* 文字色はしっかり濃く */
+  position: relative;
+  display: inline-block;
+  
+  /* 1. 文字の輪郭をわずかに光らせる（ソフトグロー） */
+  text-shadow: 
+    0 0 8px rgba(16, 8, 26, 0.2), 
+    0 0 12px rgba(16, 8, 26, 0.1);
+  
+  /* 2. 視認性を高めるための下線（お好みで） */
+  background: linear-gradient(transparent 80%, rgba(16, 8, 26, 0.1) 0%);
+}
+
+/* 桜の妖精 pipponちゃんに関連するワードだけピンクに光らせたい場合（遊び心） */
+.post-body strong.pink-glow {
+  color: #d11f71;
+  text-shadow: 0 0 10px rgba(209, 31, 113, 0.3);
 }
