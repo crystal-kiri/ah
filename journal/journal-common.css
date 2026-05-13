@@ -207,3 +207,49 @@ body {
   color: #d11f71;
   text-shadow: 0 0 10px rgba(209, 31, 113, 0.3);
 }
+
+.policy-card {
+  margin: 60px 0;
+  padding: 40px;
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-left: 4px solid #10081a; /* アナハイム・ブラックのアクセント */
+  border-radius: 2px; /* 丸角を抑えてシャープに */
+}
+
+.policy-card-title {
+  font-family: var(--sans-jp);
+  font-weight: 900;
+  font-size: 1.1rem;
+  letter-spacing: 0.05em;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.policy-list {
+  list-style: none; /* デフォルトの丸点を消す */
+  padding: 0;
+  margin: 0;
+}
+
+.policy-list li {
+  position: relative;
+  padding-left: 24px;
+  line-height: 1.8;
+  margin-bottom: 12px;
+  font-size: 0.95rem;
+  color: #444;
+}
+
+/* 箇条書きの点を「・」ではなく「細い横線」にしてシャープに */
+.policy-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.9em;
+  width: 12px;
+  height: 1px;
+  background: #10081a;
+}
