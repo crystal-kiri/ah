@@ -82,77 +82,60 @@ body {
   margin-bottom: 30px;
 }
 
-/* --- 5. CTAエリア：統合・最適化版 --- */
+/* --- 6. CTAエリア（バグ修正済み） --- */
 .post-cta, #cta-placeholder {
-  /* 画面幅いっぱいにする設定：leftを削除し、marginで調整 */
   width: 100vw;
   position: relative;
-  margin-left: calc(50% - 50vw);
-  margin-right: calc(50% - 50vw);
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
   
-  background-color: #0a080d; /* アナハイム・ブラック */
-  padding: 100px 24px;
+  background-color: var(--anaheim-black);
+  padding: clamp(60px, 10vh, 100px) 24px;
   text-align: center;
   color: #fff;
   box-sizing: border-box;
-  overflow: hidden; /* はみ出し防止 */
+  overflow: hidden;
 }
 
-/* 以前の left: 50% や transform は不要になったので削除します */
-/* 中のコンテンツ幅を制限 */
-.cta-content, .post-cta .inner {
+.cta-content {
   max-width: 700px;
   margin: 0 auto;
 }
 
-/* 英字アクセント・見出し */
-.cta-eyebrow, .post-cta h3 {
-  font-family: 'Signale', sans-serif;
-  font-size: clamp(1.2rem, 4vw, 1.8rem);
-  letter-spacing: 0.15em;
-  color: #ffffff !important;
-  margin-bottom: 20px;
-  display: block;
-  text-transform: uppercase;
-}
-
-/* 説明文：国民フォント */
-.post-cta p, #cta-placeholder p {
-  color: rgba(255, 255, 255, 0.8) !important;
-  font-family: 'Kokumin', sans-serif;
-  font-size: 1rem;
-  line-height: 1.8;
-  margin-bottom: 30px;
-}
-
-/* ボタンとリンクの親要素 */
 .cta-actions, .cta-buttons {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 20px;
   margin-top: 40px;
+  flex-wrap: wrap; /* 【修正】ボタンの折り返しを許可 */
 }
 
-/* ボタン本体（共通設定） */
 .cta-button, .btn-cta {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 240px; /* 【修正】ボタンの幅を一定に保つ */
+  height: 60px;
   background-color: #ffffff !important;
-  color: #0a080d !important;
-  padding: 16px 45px;
+  color: var(--anaheim-black) !important;
+  padding: 0 40px;
   text-decoration: none;
-  font-family: 'Signale', sans-serif;
+  font-family: var(--font-display);
   font-weight: bold;
   font-size: 0.9rem;
-  letter-spacing: 0.1em;
-  transition: all 0.3s ease;
+  letter-spacing: 0.15em;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   border: none !important;
+  white-space: nowrap;
 }
 
 .cta-button:hover, .btn-cta:hover {
   transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.4);
-  background-color: #eee !important;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+  background-color: #f0f0f0 !important;
 }
 
 /* スマホ対応 */
