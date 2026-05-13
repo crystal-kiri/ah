@@ -118,16 +118,60 @@
       color: var(--ink);
     }
 
-    /* スマホ対応：縦に並べる */
-    @media (max-width: 900px) {
-      .journal-grid {
-        flex-direction: column;
-        gap: 40px;
-      }
-      .journal-hero h1 {
-        font-size: 4.5rem; /* スマホではハミ出さないサイズに */
-      }
-    }
+    /* --- レスポンシブ微調整 --- */
+@media (max-width: 768px) {
+  /* 1. 記事全体の余白をスマホ最適化 */
+  .post-container {
+    margin-top: 100px; /* ヘッダーが80pxなので少し詰める */
+    padding: 0 20px;
+  }
+
+  /* 2. タイトルサイズを画面幅に合わせる */
+  .post-title {
+    font-size: 1.8rem; /* 2.4remだとスマホでは大きすぎて改行が不自然になるため */
+    line-height: 1.4;
+  }
+
+  /* 3. 見出し(h2)の調整 */
+  .post-body h2 {
+    font-size: 1.4rem;
+    margin: 40px 0 20px;
+  }
+
+  /* 4. CTAエリアのボタンとリンクを縦並びにする */
+  .cta-actions {
+    flex-direction: column; /* 横並びから縦並びへ */
+    gap: 20px;
+  }
+
+  .cta-button {
+    width: 100%; /* ボタンを横いっぱいに */
+    box-sizing: border-box;
+  }
+
+  /* 5. テーブルのスクロール案内（任意） */
+  .comparison-table-wrapper::after {
+    content: "← 左右にスクロールできます";
+    display: block;
+    font-size: 0.7rem;
+    color: #888;
+    text-align: right;
+    margin-top: 8px;
+  }
+}
+
+/* --- ヘッダーのロゴが重なる場合の対策 --- */
+@media (max-width: 480px) {
+  .header-inner {
+    padding: 0 16px;
+  }
+  .brand {
+    font-size: 0.8rem; /* ロゴテキストを少し小さく */
+  }
+  .nav {
+    gap: 12px; /* メニュー間隔を詰める */
+  }
+}
     
 </style>
 </head>
