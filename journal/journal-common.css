@@ -83,22 +83,22 @@ body {
 }
 
 /* --- 5. CTAエリア：統合・最適化版 --- */
-/* 直書き用(.post-cta)と外部読み込み用(#cta-placeholder)を共通化 */
 .post-cta, #cta-placeholder {
-  /* 記事の枠(800px)を突き破って画面いっぱいに黒背景を広げる */
-  margin: 100px calc(50% - 50vw) 0;
+  /* 画面幅いっぱいにする設定：leftを削除し、marginで調整 */
   width: 100vw;
   position: relative;
-  left: 50%;
-  transform: translateX(-50%);
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
   
   background-color: #0a080d; /* アナハイム・ブラック */
   padding: 100px 24px;
   text-align: center;
   color: #fff;
   box-sizing: border-box;
+  overflow: hidden; /* はみ出し防止 */
 }
 
+/* 以前の left: 50% や transform は不要になったので削除します */
 /* 中のコンテンツ幅を制限 */
 .cta-content, .post-cta .inner {
   max-width: 700px;
