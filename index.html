@@ -422,6 +422,111 @@
     .service:nth-of-type(2) .service-text a.link:hover{color:var(--blue-deep);border-bottom-color:var(--blue-deep)}
     .service:nth-of-type(3) .service-text a.link:hover{color:var(--magenta-deep);border-bottom-color:var(--magenta-deep)}
 
+/* --- JOURNAL SECTION --- */
+.journal-preview {
+  padding: 100px 0;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ヘッド部分：SERVICESセクションと統一 */
+.journal-preview .services-head {
+  margin-bottom: 60px;
+  text-align: left;
+}
+
+/* グリッドレイアウト：記事が増えても自動で横並びになる */
+.journal-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+/* 記事カード本体 */
+.journal-card {
+  display: block;
+  text-decoration: none;
+  color: #10081a;
+  padding: 30px;
+  background: #fff;
+  border: 1px solid #eee;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.journal-card:hover {
+  border-color: #10081a;
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.05);
+}
+
+/* 日付とタグ */
+.card-meta {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+  font-size: 0.8rem;
+  font-family: var(--font-en); /* 英語フォント指定 */
+  letter-spacing: 0.1em;
+  color: #888;
+}
+
+.journal-card h4 {
+  font-size: 1.25rem;
+  line-height: 1.5;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.journal-card p {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: #666;
+  margin-bottom: 25px;
+  /* 3行以上は省略する設定 */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* 矢印リンク */
+.read-more {
+  font-size: 0.8rem;
+  font-family: var(--font-en);
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  color: #10081a;
+}
+
+/* もっと見るボタン（下部） */
+.journal-more {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.journal-more .link {
+  font-family: var(--font-en);
+  font-weight: 900;
+  text-decoration: none;
+  color: #10081a;
+  border-bottom: 2px solid #10081a;
+  padding-bottom: 5px;
+  transition: opacity 0.3s;
+}
+
+.journal-more .link:hover {
+  opacity: 0.6;
+}
+
+/* スマホ対応：350px以下の画面では1段にする */
+@media (max-width: 400px) {
+  .journal-grid {
+    grid-template-columns: 1fr;
+  }
+}
+    
     /* What we do — supporting (compact) */
     .what{
       padding:120px 32px;background:var(--bg-soft);
