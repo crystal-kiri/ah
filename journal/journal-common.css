@@ -321,3 +321,73 @@ body {
   background-color: #10081a;
   color: #fff;
 }
+
+/* 関連記事セクション全体 */
+.related-section {
+  margin: 100px 0;
+  padding-top: 60px;
+  border-top: 1px solid #eee;
+}
+
+.related-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+/* カードを横に並べるグリッド */
+.related-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 2列並び */
+  gap: 30px;
+}
+
+/* カード本体のデザイン */
+.related-card {
+  display: block;
+  text-decoration: none;
+  color: #10081a !important;
+  background: #fff;
+  border: 1px solid #eee;
+  padding: 30px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.related-card:hover {
+  border-color: #10081a;
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.05);
+}
+
+.card-date {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  color: #888;
+  display: block;
+  margin-bottom: 15px;
+}
+
+.related-card h3 {
+  font-family: var(--font-base);
+  font-size: 1.1rem;
+  font-weight: 900;
+  line-height: 1.5;
+  margin-bottom: 25px;
+  border: none !important; /* H2用の線を消す */
+}
+
+.card-more {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  font-weight: 900;
+  border-bottom: 1px solid #10081a;
+  padding-bottom: 2px;
+}
+
+/* スマホでは縦並びにする */
+@media (max-width: 768px) {
+  .related-grid {
+    grid-template-columns: 1fr;
+  }
+}
