@@ -1,7 +1,17 @@
 [
   {
-    "date": "MAY 12, 2026",
+    "date": "MAY 11, 2026",
     "title": "AI営業ロープレとは？営業研修を効率化する最新トレーニング手法を解説",
     "url": "posts/ai-roleplay/"
+  }
+  {
+    "date": "MAY 12, 2026",
+    "title": "AI採用管理システムの導入事例：選考スピードを3倍にする方法",
+    "url": "/journal/posts/ai-hiring-case/"
+  },
+  {
+    "date": "MAY 13, 2026",
+    "title": "pippon time 開発秘話：なぜ「静かな」タイムカードが必要だったのか",
+    "url": "/journal/posts/pippon-dev-story/"
   }
 ]
