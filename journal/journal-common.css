@@ -328,3 +328,18 @@ body {
     grid-template-columns: 1fr; /* スマホでは縦並び */
   }
 }
+
+.journal-card .date, 
+.post-date {
+  font-family: var(--font-display) !important;
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* 一覧のカードタイトルをKokuminに */
+.journal-card h4 {
+  font-family: var(--font-base) !important;
+  font-weight: 900;
+  letter-spacing: 0.02em;
+}
