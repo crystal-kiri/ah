@@ -82,67 +82,81 @@ body {
   margin-bottom: 30px;
 }
 
-/* --- 6. CTAエリア（バグ修正済み） --- */
+/* --- 6. CTAエリア（ミニマル・フッター直上デザイン） --- */
 .post-cta, #cta-placeholder {
-  width: 100vw;
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-  
-  background-color: var(--anaheim-black);
-  padding: clamp(60px, 10vh, 100px) 24px;
+  display: block;
+  max-width: 650px;       /* 記事の本文幅に綺麗に収める */
+  margin: 120px auto 40px; /* 関連記事の下、フッターの上に程よい余白 */
+  padding: 40px 0;
   text-align: center;
-  color: #fff;
+  border-top: 1px solid #10081a; /* 境界線は細くシャープな黒線1本だけ */
   box-sizing: border-box;
-  overflow: hidden;
 }
 
 .cta-content {
-  max-width: 700px;
+  max-width: 100%;
   margin: 0 auto;
 }
 
+/* テキストは黒にして、雑誌の1コラムのような上品さに */
+.cta-content h2, .cta-content p {
+  color: #10081a !important;
+  margin: 0 0 16px 0;
+}
+
+.cta-content h2 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  letter-spacing: 0.05em;
+}
+
+.cta-content p {
+  font-size: 0.9rem;
+  color: #666 !important;
+  line-height: 1.6;
+}
+
+/* ボタンの並び */
 .cta-actions, .cta-buttons {
   display: flex;
   justify-content: center;
-  align-items: center;
-  gap: 20px;
-  margin-top: 40px;
-  flex-wrap: wrap; /* 【修正】ボタンの折り返しを許可 */
+  gap: 16px;
+  margin-top: 24px;
 }
 
+/* ボタンも「黒背景に白文字」でタイトに引き締める */
 .cta-button, .btn-cta {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 240px; /* 【修正】ボタンの幅を一定に保つ */
-  height: 60px;
-  background-color: #ffffff !important;
-  color: var(--anaheim-black) !important;
-  padding: 0 40px;
+  padding: 12px 32px;
+  background-color: #10081a !important; /* ソリッドな黒 */
+  color: #ffffff !important;             /* 白文字 */
   text-decoration: none;
   font-family: var(--font-display);
   font-weight: bold;
-  font-size: 0.9rem;
-  letter-spacing: 0.15em;
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  transition: opacity 0.2s ease;
   border: none !important;
-  white-space: nowrap;
 }
 
 .cta-button:hover, .btn-cta:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 15px 30px rgba(0,0,0,0.4);
-  background-color: #f0f0f0 !important;
+  opacity: 0.8;
+  transform: none;      /* 派手な浮き上がりアニメーションはカット */
+  box-shadow: none;     /* シャドウも消してフラットに */
 }
 
 /* スマホ対応 */
 @media (max-width: 600px) {
   .cta-actions, .cta-buttons {
     flex-direction: column;
-    gap: 15px;
+    align-items: center;
+    gap: 12px;
+  }
+  .cta-button, .btn-cta {
+    width: 100%;
+    max-width: 280px;
   }
 }
 
