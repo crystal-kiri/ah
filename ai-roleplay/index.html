@@ -14,7 +14,71 @@
   <meta property="og:title" content="営業ロープレ AI｜合同会社アナハイム・エレクトロニクス" />
   <meta property="og:description" content="AI が顧客役になって、営業トークの練習に何度でも付き合う、現場のためのトレーニング。" />
   <meta property="og:url" content="https://anaheimelectronics.jp/ai-roleplay/" />
+  <meta property="og:image" content="https://anaheimelectronics.jp/assets/ogp.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
   <meta property="og:locale" content="ja_JP" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="営業ロープレ AI｜合同会社アナハイム・エレクトロニクス" />
+  <meta name="twitter:description" content="AI が顧客役になって、営業トークの練習に何度でも付き合う、現場のためのトレーニング。" />
+  <meta name="twitter:image" content="https://anaheimelectronics.jp/assets/ogp.png" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Service",
+        "name": "営業ロープレ AI",
+        "serviceType": "営業トレーニング・営業ロールプレイング AI",
+        "url": "https://anaheimelectronics.jp/ai-roleplay/",
+        "description": "AI が顧客役を演じ、新人やメンバーが好きなタイミングで何度でも営業トークを練習できる環境をつくるサービス。業界・商材・想定顧客に合わせてシナリオをカスタマイズでき、会話の進め方やクロージングへのフィードバックも AI から即時に返ります。",
+        "areaServed": "JP",
+        "availableChannel": { "@type": "ServiceChannel", "serviceUrl": "https://anaheimelectronics.jp/contact/" },
+        "provider": { "@id": "https://anaheimelectronics.jp/#organization" }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://anaheimelectronics.jp/#organization",
+        "name": "合同会社アナハイム・エレクトロニクス",
+        "url": "https://anaheimelectronics.jp/"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://anaheimelectronics.jp/" },
+          { "@type": "ListItem", "position": 2, "name": "営業ロープレ AI", "item": "https://anaheimelectronics.jp/ai-roleplay/" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "営業ロープレ AI とは何ですか？",
+            "acceptedAnswer": { "@type": "Answer", "text": "AI が顧客役を演じ、新人やメンバーが好きなタイミングで何度でも営業トークを練習できる環境をつくるサービスです。先輩の同席や予定調整を待たずに、現場でトレーニングを続けられます。" }
+          },
+          {
+            "@type": "Question",
+            "name": "自社の商材や業界に合わせられますか？",
+            "acceptedAnswer": { "@type": "Answer", "text": "はい。業界・商材・想定顧客の温度感などに合わせて、顧客役 AI のシナリオを自由にカスタマイズできます。初期のシナリオ設計もご相談いただけます。" }
+          },
+          {
+            "@type": "Question",
+            "name": "どんなフィードバックが得られますか？",
+            "acceptedAnswer": { "@type": "Answer", "text": "会話の進め方、商品説明の的確さ、クロージングの強さなどを AI が即座にコメントします。録画レビューを待たずに、その場で改善点を確認できます。" }
+          },
+          {
+            "@type": "Question",
+            "name": "練習の状況は管理できますか？",
+            "acceptedAnswer": { "@type": "Answer", "text": "誰が・何回・どのシナリオで練習したかを管理画面で追えるので、教育マネージャーがチームの状況を把握できます。中小から大手まで、人数・教育サイクルに合わせて導入できます。" }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 
   <link rel="icon" type="image/png" href="/assets/favicon.png" />
   <link rel="apple-touch-icon" href="/assets/favicon.png" />
@@ -182,6 +246,16 @@
     .other-card h4{font-family:var(--sans-jp);font-weight:900;font-size:1.16rem;line-height:1.5;color:var(--ink);margin-bottom:10px}
     .other-card p{font-size:.92rem;color:var(--ink-soft);line-height:1.85}
 
+    /* FAQ */
+    .faq{max-width:840px;margin:0 auto;padding:8px clamp(24px,5vw,32px) clamp(70px,12vw,110px)}
+    .faq-label{font-family:var(--sans-en);font-size:.76rem;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-mute);margin-bottom:18px;display:block;font-weight:700}
+    .faq h2{font-family:var(--sans-jp);font-weight:700;font-size:clamp(1.6rem,3.4vw,2.2rem);letter-spacing:-.02em;color:var(--ink);margin-bottom:28px}
+    .faq-item{padding:24px 0;border-top:1px solid var(--line)}
+    .faq-item:last-child{border-bottom:1px solid var(--line)}
+    .faq-item h3{font-family:var(--sans-jp);font-weight:700;font-size:1.06rem;line-height:1.6;color:var(--ink);margin-bottom:10px;padding-left:28px;position:relative}
+    .faq-item h3::before{content:"Q";position:absolute;left:0;top:0;font-family:var(--sans-en);font-weight:800;color:var(--accent-deep)}
+    .faq-item p{font-size:.98rem;color:var(--ink-soft);line-height:2;margin:0;padding-left:28px}
+
     .footer{background:var(--bg);padding:36px 32px}
     .footer-inner{max-width:var(--container);margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;padding-top:24px;border-top:1px solid var(--hairline)}
     .footer .left{font-family:var(--sans-en);font-size:.78rem;color:var(--ink-mute)}
@@ -255,6 +329,27 @@
     <h3>シナリオ設計・導入相談、<em class="serif-i">気軽に</em>どうぞ。</h3>
     <p>御社の営業現場に合わせたシナリオの初期設計、デモ環境のご案内まで対応します。</p>
     <a class="btn-primary" href="/contact/">お問い合わせフォームへ →</a>
+  </div>
+</section>
+
+<section class="faq">
+  <span class="faq-label">FAQ</span>
+  <h2>よくある質問</h2>
+  <div class="faq-item">
+    <h3>営業ロープレ AI とは何ですか？</h3>
+    <p>AI が顧客役を演じ、新人やメンバーが好きなタイミングで何度でも営業トークを練習できる環境をつくるサービスです。先輩の同席や予定調整を待たずに、現場でトレーニングを続けられます。</p>
+  </div>
+  <div class="faq-item">
+    <h3>自社の商材や業界に合わせられますか？</h3>
+    <p>はい。業界・商材・想定顧客の温度感などに合わせて、顧客役 AI のシナリオを自由にカスタマイズできます。初期のシナリオ設計もご相談いただけます。</p>
+  </div>
+  <div class="faq-item">
+    <h3>どんなフィードバックが得られますか？</h3>
+    <p>会話の進め方、商品説明の的確さ、クロージングの強さなどを AI が即座にコメントします。録画レビューを待たずに、その場で改善点を確認できます。</p>
+  </div>
+  <div class="faq-item">
+    <h3>練習の状況は管理できますか？</h3>
+    <p>誰が・何回・どのシナリオで練習したかを管理画面で追えるので、教育マネージャーがチームの状況を把握できます。中小から大手まで、人数・教育サイクルに合わせて導入できます。</p>
   </div>
 </section>
 

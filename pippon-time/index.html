@@ -38,19 +38,85 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "pippon time",
-    "description": "小さな会社・お店のためのシンプルなタイムカード。打刻はクラウドへリアルタイム保存。",
-    "applicationCategory": "BusinessApplication",
-    "operatingSystem": "Web",
-    "url": "https://anaheimelectronics.jp/pippon-time/",
-    "inLanguage": "ja",
-    "offers": {
-      "@type": "Offer",
-      "price": "3300",
-      "priceCurrency": "JPY"
-    },
-    "publisher": {"@type": "Organization", "name": "Anaheim Electronics", "url": "https://anaheimelectronics.jp/"}
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "pippon time",
+        "description": "小さな会社・お店のためのシンプルなタイムカード。名前を押して出勤を押すだけで、打刻はクラウドへリアルタイム保存されます。10名まで・初月無料・違約金なし。",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web",
+        "url": "https://anaheimelectronics.jp/pippon-time/",
+        "inLanguage": "ja",
+        "featureList": [
+          "クラウドへの打刻リアルタイム保存",
+          "店舗ごとの専用URL発行",
+          "スマホ・タブレット対応（インストール不要）",
+          "10名まで同一料金",
+          "初期設定サポート込み"
+        ],
+        "offers": {
+          "@type": "Offer",
+          "price": "3300",
+          "priceCurrency": "JPY",
+          "description": "月額3,300円（税込）・10名まで・初月無料トライアル付き"
+        },
+        "publisher": { "@id": "https://anaheimelectronics.jp/#organization" }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://anaheimelectronics.jp/#organization",
+        "name": "合同会社アナハイム・エレクトロニクス",
+        "alternateName": "Anaheim Electronics",
+        "url": "https://anaheimelectronics.jp/"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://anaheimelectronics.jp/" },
+          { "@type": "ListItem", "position": 2, "name": "pippon time", "item": "https://anaheimelectronics.jp/pippon-time/" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "11名以上のスタッフを登録したい場合は？",
+            "acceptedAnswer": { "@type": "Answer", "text": "現在の標準プランは10名までです。11名を超える場合は別途ご相談ください。お店の規模に応じて柔軟にご提案します（info@anaheimelectronics.jp までご連絡を）。" }
+          },
+          {
+            "@type": "Question",
+            "name": "複数店舗で運用できますか？",
+            "acceptedAnswer": { "@type": "Answer", "text": "はい。店舗ごとに専用URLを発行できますので、複数店舗でもそれぞれ独立して運用可能です。複数店舗で1契約にまとめたい場合もご相談ください。" }
+          },
+          {
+            "@type": "Question",
+            "name": "オフライン環境でも打刻できますか？",
+            "acceptedAnswer": { "@type": "Answer", "text": "いいえ、ブラウザでの動作にはインターネット接続が必要です。お店のWi-Fi、もしくはタブレット・スマートフォンの4G/5G回線でご利用ください。" }
+          },
+          {
+            "@type": "Question",
+            "name": "解約はどうやってできますか？",
+            "acceptedAnswer": { "@type": "Answer", "text": "Stripeの顧客ポータルから、お客様自身でいつでも解約いただけます。違約金や手数料は一切かかりません。" }
+          },
+          {
+            "@type": "Question",
+            "name": "打刻データはどこに保存されますか？",
+            "acceptedAnswer": { "@type": "Answer", "text": "アプリのお客様専用のクラウド内に直接保存されます。データの所有権はお客様にあり、いつでもダウンロード・編集・印刷ができます。" }
+          },
+          {
+            "@type": "Question",
+            "name": "初期設定は本当にやってもらえますか？",
+            "acceptedAnswer": { "@type": "Answer", "text": "はい。お申込み後、企業IDとパスワードを発行し、スタッフ登録、専用URL発行までこちらでセットアップします。5営業日以内のご利用開始を目安にしています。" }
+          },
+          {
+            "@type": "Question",
+            "name": "スマホ・タブレットでも使えますか？",
+            "acceptedAnswer": { "@type": "Answer", "text": "はい。iPad、Androidタブレット、スマートフォンのブラウザでそのまま動作します。専用アプリのインストールは不要です。スタッフの出入り口やレジ横にiPadを置いて運用するのが一番おすすめです。" }
+          }
+        ]
+      }
+    ]
   }
   </script>
 

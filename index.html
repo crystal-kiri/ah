@@ -29,76 +29,111 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "合同会社アナハイム・エレクトロニクス",
-    "alternateName": "Anaheim Electronics LLC",
-    "url": "https://anaheimelectronics.jp/",
-    "email": "info@anaheimelectronics.jp",
-    "foundingDate": "2018",
-    "address": {
-      "@type": "PostalAddress",
-      "addressCountry": "JP",
-      "addressRegion": "東京都",
-      "addressLocality": "千代田区",
-      "streetAddress": "神田佐久間町8-4"
-    }
-  }
-    {
-  "@context": "https://schema.org",
-  "@type": "ItemList",
-  "name": "アナハイム・エレクトロニクスの提供サービス",
-  "description": "AI採用管理、営業ロープレAI、少人数向けタイムカードの導入支援と提供。",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "item": {
-        "@type": "Service",
-        "name": "AI 採用管理システム",
-        "description": "応募受付から面接調整までAIがサポートする採用管理システム。規模に合わせた導入支援。",
-        "url": "https://anaheimelectronics.jp/ai-hiring/",
-        "provider": {
-          "@type": "Organization",
-          "name": "合同会社アナハイム・エレクトロニクス"
-        }
-      }
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "item": {
-        "@type": "Service",
-        "name": "営業ロープレ AI",
-        "description": "AIが顧客役になり、営業トークのトレーニングを24時間いつでも可能にするツール。",
-        "url": "https://anaheimelectronics.jp/ai-roleplay/",
-        "provider": {
-          "@type": "Organization",
-          "name": "合同会社アナハイム・エレクトロニクス"
-        }
-      }
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "item": {
-        "@type": "Product",
-        "name": "pippon time (ピポンタイム)",
-        "description": "クラウドと連携する、少人数向けのシンプルで静かなタイムカード。",
-        "url": "https://anaheimelectronics.jp/pippon-time/",
-        "brand": {
-          "@type": "Brand",
-          "name": "pippon"
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://anaheimelectronics.jp/#organization",
+        "name": "合同会社アナハイム・エレクトロニクス",
+        "alternateName": [
+          "アナハイム・エレクトロニクス",
+          "アナハイムエレクトロニクス",
+          "Anaheim Electronics",
+          "Anaheim Electronics LLC"
+        ],
+        "url": "https://anaheimelectronics.jp/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://anaheimelectronics.jp/assets/favicon.png"
         },
-        "offers": {
-          "@type": "Offer",
-          "availability": "https://schema.org/InStock",
-          "price": "0",
-          "priceCurrency": "JPY"
-        }
+        "email": "info@anaheimelectronics.jp",
+        "foundingDate": "2018-02",
+        "description": "合同会社アナハイム・エレクトロニクスは、東京・神田を拠点に、AI／SaaS／DX ツールの代理販売・導入支援と、自社プロダクトの開発を行う AI／DX 代理店です。AI 採用管理システム、営業ロープレ AI、少人数向けタイムカード「pippon time」などを提供しています。",
+        "disambiguatingDescription": "東京都千代田区に実在する合同会社（法人番号 7011103007635、2018年設立）です。アニメ『機動戦士ガンダム』に登場する架空企業「アナハイム・エレクトロニクス社」とは関係ありません。",
+        "knowsAbout": [
+          "AI 採用管理システム",
+          "営業ロープレ AI",
+          "勤怠管理・タイムカード",
+          "AI 導入支援",
+          "DX 推進",
+          "SaaS 代理販売"
+        ],
+        "areaServed": "JP",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "JP",
+          "addressRegion": "東京都",
+          "addressLocality": "千代田区",
+          "streetAddress": "神田佐久間町1-8-4 アルテール秋葉原708",
+          "postalCode": "101-0025"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "customer support",
+          "email": "info@anaheimelectronics.jp",
+          "url": "https://anaheimelectronics.jp/contact/",
+          "availableLanguage": "ja"
+        },
+        "sameAs": [
+          "https://info.gbiz.go.jp/hojin/ichiran?hojinBango=7011103007635"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://anaheimelectronics.jp/#website",
+        "url": "https://anaheimelectronics.jp/",
+        "name": "合同会社アナハイム・エレクトロニクス",
+        "alternateName": "Anaheim Electronics",
+        "inLanguage": "ja",
+        "publisher": { "@id": "https://anaheimelectronics.jp/#organization" }
+      },
+      {
+        "@type": "ItemList",
+        "name": "アナハイム・エレクトロニクスの提供サービス",
+        "description": "AI採用管理、営業ロープレAI、少人数向けタイムカードの導入支援と提供。",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "item": {
+              "@type": "Service",
+              "name": "AI 採用管理システム",
+              "description": "応募受付から面接調整までAIがサポートする採用管理システム。規模に合わせた導入支援。",
+              "url": "https://anaheimelectronics.jp/ai-hiring/",
+              "provider": { "@id": "https://anaheimelectronics.jp/#organization" }
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "item": {
+              "@type": "Service",
+              "name": "営業ロープレ AI",
+              "description": "AIが顧客役になり、営業トークのトレーニングを24時間いつでも可能にするツール。",
+              "url": "https://anaheimelectronics.jp/ai-roleplay/",
+              "provider": { "@id": "https://anaheimelectronics.jp/#organization" }
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "item": {
+              "@type": "Product",
+              "name": "pippon time (ピポンタイム)",
+              "description": "クラウドと連携する、少人数向けのシンプルで静かなタイムカード。",
+              "url": "https://anaheimelectronics.jp/pippon-time/",
+              "brand": { "@type": "Brand", "name": "pippon" },
+              "offers": {
+                "@type": "Offer",
+                "availability": "https://schema.org/InStock",
+                "price": "0",
+                "priceCurrency": "JPY"
+              }
+            }
+          }
+        ]
       }
-    }
-  ]
-}
+    ]
+  }
   </script>
 
   <style>
