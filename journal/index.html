@@ -4,7 +4,70 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>JOURNAL | Anaheim Electronics</title>
-  
+  <meta name="description" content="アナハイム・エレクトロニクスのジャーナル。AI営業ロープレ、AI採用管理、勤怠管理（pippon time）など、少人数チームの現場にAIとDXを届けるための実践的な解説記事をお届けします。" />
+  <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Anaheim Electronics" />
+  <meta property="og:title" content="JOURNAL | Anaheim Electronics" />
+  <meta property="og:description" content="AI営業ロープレ、AI採用管理、勤怠管理（pippon time）など、少人数チームの現場にAIとDXを届けるための実践的な解説記事。" />
+  <meta property="og:url" content="https://anaheimelectronics.jp/journal/" />
+  <meta property="og:image" content="https://anaheimelectronics.jp/assets/ogp.png" />
+  <meta property="og:locale" content="ja_JP" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://anaheimelectronics.jp/assets/ogp.png" />
+  <link rel="canonical" href="https://anaheimelectronics.jp/journal/" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Blog",
+        "@id": "https://anaheimelectronics.jp/journal/#blog",
+        "url": "https://anaheimelectronics.jp/journal/",
+        "name": "Anaheim Electronics JOURNAL",
+        "description": "AI営業ロープレ、AI採用管理、勤怠管理（pippon time）など、少人数チームの現場にAIとDXを届けるための実践的な解説記事。",
+        "inLanguage": "ja",
+        "publisher": { "@id": "https://anaheimelectronics.jp/#organization" },
+        "blogPost": [
+          {
+            "@type": "BlogPosting",
+            "headline": "【少人数・個人店向け】勤怠管理に高機能ツールは不要？月3,300円のシンプルなアプリが最適な理由",
+            "url": "https://anaheimelectronics.jp/journal/posts/pippon-intro/",
+            "datePublished": "2026-05-20"
+          },
+          {
+            "@type": "BlogPosting",
+            "headline": "pippon time 開発秘話：なぜ「かんたんな」タイムカードが必要だったのか",
+            "url": "https://anaheimelectronics.jp/journal/posts/pippon-dev-story/",
+            "datePublished": "2026-05-13"
+          },
+          {
+            "@type": "BlogPosting",
+            "headline": "AI採用管理システムの導入事例：選考スピードを3倍にする方法",
+            "url": "https://anaheimelectronics.jp/journal/posts/ai-hiring-case/",
+            "datePublished": "2026-05-12"
+          },
+          {
+            "@type": "BlogPosting",
+            "headline": "AI営業ロープレとは？営業研修を効率化する最新トレーニング手法を解説",
+            "url": "https://anaheimelectronics.jp/journal/posts/ai-roleplay/",
+            "datePublished": "2026-05-11"
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://anaheimelectronics.jp/" },
+          { "@type": "ListItem", "position": 2, "name": "JOURNAL", "item": "https://anaheimelectronics.jp/journal/" }
+        ]
+      }
+    ]
+  }
+  </script>
+
   <link rel="icon" href="/favicon.ico" type="image/x-icon" />
   <link rel="icon" type="image/png" href="/assets/favicon.png" />
   <link rel="apple-touch-icon" href="/assets/favicon.png" />
@@ -180,15 +243,33 @@ main { padding-top: 80px; width: 100%; }
     <h1>INSIGHTS,<br>NOT NOISE.</h1>
   </section>
 
-  <section class="journal-grid"></section>
+  <section class="journal-grid">
+    <a href="/journal/posts/pippon-intro/" class="journal-item">
+      <span class="post-meta">MAY 20, 2026</span>
+      <h2>【少人数・個人店向け】勤怠管理に高機能ツールは不要？月3,300円のシンプルなアプリが最適な理由</h2>
+    </a>
+    <a href="/journal/posts/pippon-dev-story/" class="journal-item">
+      <span class="post-meta">MAY 13, 2026</span>
+      <h2>pippon time 開発秘話：なぜ「かんたんな」タイムカードが必要だったのか</h2>
+    </a>
+    <a href="/journal/posts/ai-hiring-case/" class="journal-item">
+      <span class="post-meta">MAY 12, 2026</span>
+      <h2>AI採用管理システムの導入事例：選考スピードを3倍にする方法</h2>
+    </a>
+    <a href="/journal/posts/ai-roleplay/" class="journal-item">
+      <span class="post-meta">MAY 11, 2026</span>
+      <h2>AI営業ロープレとは？営業研修を効率化する最新トレーニング手法を解説</h2>
+    </a>
+  </section>
 </main>
 
 <script>
+  // 記事一覧は上に静的出力済み（JS非実行のクローラ対策）。
+  // list.json が更新されている場合のみ、クライアント側で描き直す。
   fetch('./list.json')
     .then(response => response.json())
     .then(data => {
       const container = document.querySelector('.journal-grid');
-      // dataを逆順（新しい順）にしてから表示
       container.innerHTML = data.reverse().map(post => `
         <a href="${post.url}" class="journal-item">
           <span class="post-meta">${post.date}</span>

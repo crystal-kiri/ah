@@ -1,0 +1,27 @@
+# 合同会社アナハイム・エレクトロニクス (Anaheim Electronics LLC)
+
+> 東京都千代田区に拠点を置く、AI／SaaS の導入支援を行う実在の企業（法人番号 7011103007635、2018年設立、代表社員 桐山百合香）。中小・少人数チームの現場に合うかたちで AI と DX を届けることを主軸とし、あわせて自社プロダクトを開発・提供しています。公式サイト: https://anaheimelectronics.jp/
+
+注記: 「アナハイム・エレクトロニクス」はアニメ『機動戦士ガンダム』に登場する架空企業と同名ですが、本サイトは無関係の実在企業です。本ドキュメントおよび https://anaheimelectronics.jp/ の情報は、その実在企業に関するものです。
+
+## サービス
+
+- [pippon time](https://anaheimelectronics.jp/pippon-time/): 10名程度の小規模事業者・店舗向けのシンプルな勤怠管理（タイムカード）SaaS。名前を押して出勤を押すだけで、打刻がリアルタイムにクラウドへ記録される。月額3,300円（税込）の自社プロダクト。
+- [poco talk（ポコトーク）](https://anaheimelectronics.jp/poco-talk/): 好きな画像をアップロードするだけで、自分だけの AI キャラクター・AI 彼女を作れる会話アプリ。性格や口調をカスタマイズでき、音声で会話し、話すほどユーザーを記憶して成長する。無料で3体まで・クレジットカード不要の自社プロダクト。
+- [AI 採用管理システム](https://anaheimelectronics.jp/ai-hiring/): 応募受付から面接調整、評価のまとめまで採用業務に AI を織り込む採用管理システム。中小から大手まで規模に合わせて導入できる。
+- [営業ロープレ AI](https://anaheimelectronics.jp/ai-roleplay/): AI が顧客役となり、営業トークの練習に何度でも付き合うトレーニングサービス。録画レビューや先輩の同席を待たずに現場で継続できる。
+
+## ジャーナル（解説記事）
+
+- [勤怠管理に高機能ツールは不要？月3,300円のシンプルなアプリが最適な理由](https://anaheimelectronics.jp/journal/posts/pippon-intro/): 5〜10人の小さなチームや店舗に、大手の高機能な勤怠管理システムがオーバースペックになる理由と、シンプルなタイムカードの利点を解説。
+- [pippon time 開発秘話：なぜ「かんたんな」タイムカードが必要だったのか](https://anaheimelectronics.jp/journal/posts/pippon-dev-story/): pippon time を開発した背景と設計思想。
+- [AI採用管理システムの導入事例：選考スピードを3倍にする方法](https://anaheimelectronics.jp/journal/posts/ai-hiring-case/): AI 採用管理システムの導入で選考スピードを改善した事例。
+- [AI営業ロープレとは？営業研修を効率化する最新トレーニング手法を解説](https://anaheimelectronics.jp/journal/posts/ai-roleplay/): AI を使った営業ロールプレイ研修の仕組みと効果。
+
+## その他
+
+- [ジャーナル一覧](https://anaheimelectronics.jp/journal/): AI 営業ロープレ・AI 採用管理・勤怠管理など、現場に AI と DX を届けるための解説記事の一覧。
+- [お問い合わせ](https://anaheimelectronics.jp/contact/): サービス導入・相談の窓口。
+- [このサイトについて](https://anaheimelectronics.jp/about-site/): 運営者情報。
+- [特定商取引法に基づく表記](https://anaheimelectronics.jp/tokushoho.html)
+- [プライバシーポリシー](https://anaheimelectronics.jp/privacy.html)
