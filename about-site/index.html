@@ -34,7 +34,15 @@
         "@id": "https://anaheimelectronics.jp/#organization",
         "name": "合同会社アナハイム・エレクトロニクス",
         "alternateName": "Anaheim Electronics",
-        "url": "https://anaheimelectronics.jp/"
+        "url": "https://anaheimelectronics.jp/",
+        "founder": { "@id": "https://anaheimelectronics.jp/#daihyo" }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://anaheimelectronics.jp/#daihyo",
+        "name": "桐山 百合香",
+        "jobTitle": "代表",
+        "worksFor": { "@id": "https://anaheimelectronics.jp/#organization" }
       },
       {
         "@type": "BreadcrumbList",
@@ -87,6 +95,15 @@
 
     .updated{color:var(--muted);font-size:.86rem;margin-top:48px;padding-top:24px;border-top:1px solid var(--hairline)}
 
+    /* 代表メッセージ */
+    .message{margin:8px 0 8px}
+    .motto{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:clamp(24px,4vw,38px)}
+    .motto-lead{font-size:clamp(1.14rem,2.6vw,1.5rem);font-weight:700;color:var(--plum-deep);line-height:1.7;letter-spacing:-.01em;margin-bottom:22px}
+    .motto p{color:var(--ink-soft);font-size:1rem;line-height:2.1;margin-bottom:16px}
+    .motto p:last-of-type{margin-bottom:0}
+    .signoff{text-align:right;margin-top:28px;padding-top:20px;border-top:1px solid var(--hairline);color:var(--ink-soft);font-size:.9rem}
+    .signoff b{font-weight:700;font-size:1.1rem;color:var(--ink);margin-left:.5em}
+
     .footer{background:var(--bg-warm);border-top:1px solid var(--hairline);padding:30px 32px}
     .footer-inner{max-width:880px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:20px;font-size:.82rem;color:var(--muted);flex-wrap:wrap}
     .footer a{color:var(--ink-soft);border-bottom:none}
@@ -110,6 +127,17 @@
   <div class="page-eyebrow">Company Profile</div>
   <h1>会社概要</h1>
   <p class="lead">合同会社アナハイム・エレクトロニクスは、最先端AIソリューションの提供と、現場の課題を解決するプロダクト開発を行っています。</p>
+
+  <section class="message">
+    <div class="page-eyebrow">Message</div>
+    <h2>代表メッセージ</h2>
+    <div class="motto">
+      <p class="motto-lead">生きている時間の中に仕事があり、<br>仕事の中にも人生がある。</p>
+      <p>私にとって仕事と人生は別々のものではありません。休日の経験が仕事のヒントになることもあれば、仕事での出会いが人生を豊かにしてくれることもあります。</p>
+      <p>だからこそ、一人ではなく、チームで何かを創り上げる時間を大切にしています。</p>
+      <div class="signoff">代表<b>桐山 百合香</b></div>
+    </div>
+  </section>
 
   <h2>企業情報</h2>
   <table class="info-table">
@@ -147,7 +175,7 @@
     </tr>
   </table>
 
-  <p class="updated">最終更新日：2026 年 5 月 12 日</p>
+  <p class="updated">最終更新日：2026 年 6 月 5 日</p>
 </main>
 
 <div id="cta-placeholder"></div>
