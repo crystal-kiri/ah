@@ -222,6 +222,14 @@
     }
     .nav a{transition:color .2s}
     .nav a:hover{color:#fff}
+
+    /* ハンバーガー（スマホ用メニュー） */
+    .nav-toggle{display:none;margin-left:auto;width:44px;height:44px;padding:0;border:none;background:transparent;cursor:pointer;flex-direction:column;justify-content:center;align-items:center;gap:6px;mix-blend-mode:difference;z-index:60}
+    .nav-toggle span{display:block;width:26px;height:2px;background:#fff;transition:transform .3s ease,opacity .2s ease}
+    .nav-toggle.open span:nth-child(1){transform:translateY(8px) rotate(45deg)}
+    .nav-toggle.open span:nth-child(2){opacity:0}
+    .nav-toggle.open span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+    .mobile-menu{display:none}
     
     .header-cta {
       font-family: var(--sans-en);
@@ -678,6 +686,18 @@
     }
     @media (max-width:780px){
       .nav{display:none}
+      .header-cta{display:none}
+      .nav-toggle{display:flex}
+      .mobile-menu{
+        display:block;position:absolute;top:100%;left:0;right:0;
+        background:rgba(0,0,0,.96);backdrop-filter:blur(8px);
+        border-top:1px solid rgba(255,255,255,.12);
+        padding:0 24px;max-height:0;overflow:hidden;opacity:0;pointer-events:none;
+        transition:max-height .32s ease,opacity .25s ease;
+      }
+      .mobile-menu.open{max-height:360px;opacity:1;pointer-events:auto;padding:8px 24px 18px}
+      .mobile-menu a{display:block;color:#fff;font-family:var(--sans-jp);font-size:1.02rem;font-weight:500;letter-spacing:.02em;padding:16px 2px;border-bottom:1px solid rgba(255,255,255,.1)}
+      .mobile-menu a:last-child{border-bottom:none;color:#fff;font-weight:700}
     }
     @media (max-width:480px){
       .header{height:64px}
@@ -704,6 +724,17 @@
     </nav>
     
     <a href="/pippon-time/" class="header-cta">PIPPON TIME →</a>
+
+    <button class="nav-toggle" id="navToggle" aria-label="メニューを開く" aria-expanded="false" aria-controls="mobileMenu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#services">FEATURES</a>
+    <a href="/journal/">JOURNAL</a>
+    <a href="/contact/">CONTACT</a>
+    <a href="/pippon-time/">PIPPON TIME →</a>
   </div>
 </header>
 
@@ -989,6 +1020,20 @@ document.addEventListener('DOMContentLoaded', function () {
   });
   init(); animate();
 });
+</script>
+
+<script>
+  (function(){
+    var t=document.getElementById('navToggle'), m=document.getElementById('mobileMenu');
+    if(!t||!m) return;
+    function close(){m.classList.remove('open');t.classList.remove('open');t.setAttribute('aria-expanded','false');}
+    t.addEventListener('click',function(){
+      var open=!m.classList.contains('open');
+      m.classList.toggle('open',open);t.classList.toggle('open',open);
+      t.setAttribute('aria-expanded',open?'true':'false');
+    });
+    m.querySelectorAll('a').forEach(function(a){a.addEventListener('click',close);});
+  })();
 </script>
 
 </body>
