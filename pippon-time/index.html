@@ -150,6 +150,7 @@
       font-feature-settings:"palt";
       color:var(--ink);background:var(--bg);
       line-height:1.85;
+      overflow-x:hidden;
       -webkit-font-smoothing:antialiased;
       -moz-osx-font-smoothing:grayscale;
     }
@@ -439,8 +440,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-wrap: nowrap; /* 絶対に改行させない */
-  gap: 40px; 
+  flex-wrap: wrap; /* スマホで横にはみ出さないよう折り返す */
+  gap: 18px 40px;
   padding: 60px 20px;
   background: transparent; /* 余計な色はつけない */
   border: none;
@@ -480,9 +481,10 @@
 /* スマホでは「10名〜」がはみ出さないように自動で小さくする */
 @media (max-width: 900px) {
   .meta-box {
-    gap: 15px;
-    padding: 40px 10px;
+    gap: 14px 26px;
+    padding: 40px 16px;
   }
+  .meta-sep { display: none; } /* 折り返し時に「／」が宙ぶらりんになるのを防ぐ */
   .meta-item strong {
     font-size: 1.1rem;
   }
