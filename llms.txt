@@ -13,6 +13,7 @@
 
 ## ジャーナル（解説記事）
 
+- [タイムカードアプリの選び方｜5〜10人の少人数の店舗におすすめの基準](https://anaheimelectronics.jp/journal/posts/timecard-app-choice/): 紙・大手クラウド勤怠・シンプルアプリの3方式を比較し、少人数の店舗が失敗しないタイムカードアプリの選び方（定額制・操作の簡単さ・インストール不要）を解説。
 - [勤怠管理に高機能ツールは不要？月3,300円のシンプルなアプリが最適な理由](https://anaheimelectronics.jp/journal/posts/pippon-intro/): 5〜10人の小さなチームや店舗に、大手の高機能な勤怠管理システムがオーバースペックになる理由と、シンプルなタイムカードの利点を解説。
 - [pippon time 開発秘話：なぜ「かんたんな」タイムカードが必要だったのか](https://anaheimelectronics.jp/journal/posts/pippon-dev-story/): pippon time を開発した背景と設計思想。
 - [AI採用管理システムの導入事例：選考スピードを3倍にする方法](https://anaheimelectronics.jp/journal/posts/ai-hiring-case/): AI 採用管理システムの導入で選考スピードを改善した事例。
