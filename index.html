@@ -418,8 +418,20 @@
 
     /* slot 2: poco lab */
     .service:nth-of-type(2) .service-visual{
-      background:linear-gradient(135deg,#ff6fa5 0%,#9b3fd1 100%);
+      background-image:url("/assets/poco.png");
+      background-size:cover;background-position:center top;
       background-color:#ff3d7f;
+    }
+    .service:nth-of-type(2) .service-visual::before{
+      content:"";position:absolute;inset:0;z-index:1;
+      background:linear-gradient(180deg,rgba(108,30,176,.05) 0%,transparent 45%,rgba(108,30,176,.65) 100%);
+    }
+    .service:nth-of-type(2) .service-visual .v-num{color:rgba(255,255,255,.92);text-shadow:0 1px 6px rgba(108,30,176,.5)}
+    .service:nth-of-type(2) .service-visual .v-name{
+      position:absolute;left:50%;bottom:24px;transform:translateX(-50%);
+      top:auto;text-align:center;
+      font-size:clamp(2rem,5.4vw,4.6rem);
+      color:#fff;text-shadow:0 2px 14px rgba(108,30,176,.6);
     }
     .service:nth-of-type(2) .service-visual .v-name{color:#fff;text-shadow:0 2px 14px rgba(108,30,176,.35)}
     .service:nth-of-type(2) .service-text .num{color:var(--violet-deep)}
@@ -759,7 +771,7 @@
     <div class="service-text">
       <span class="num">02 / AI Character</span>
       <h4>話せる AI<br>キャラクター。</h4>
-      <p>好きな画像をアップロードするだけで、性格も口調も自由な AI キャラクターが完成。音声でも会話でき、話すほどあなたを覚えて関係が深まります。まずは無料で 3 体まで。</p>
+      <p>好きな画像をアップロードするだけで、性格も口調も自由な AI キャラクターが完成。音声でも会話でき、話すほどあなたを覚えて関係が深まります。まずは無料でお試し。</p>
       <div class="actions">
         <span class="badge">提供中</span>
         <a class="link" href="/poco-lab/">詳しく見る →</a>
